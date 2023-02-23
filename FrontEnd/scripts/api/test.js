@@ -34,7 +34,7 @@ const displayCategories = (categories) => {
 // cela permet de créer un filter 
 const createFilter = (categorie) => {
   const filter = document.createElement("button")
-  filter.classList.add("filter-btn")
+  filter.classList.add("filters")
   filter.innerText = categorie
   return filter
 }

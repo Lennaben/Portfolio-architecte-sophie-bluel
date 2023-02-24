@@ -25,7 +25,7 @@ const getCategories = async () => {
 
 // afficher les categories 
 const displayCategories = (categories) => {
-  const filtersContainer = document.querySelector(".filters")
+  const filtersContainer = document.querySelector(".filters-container ")
   // pour chacune des categories, on attache a notre container le resultat de la fonction createFilter 
   categories.map((categorie) => {
     filtersContainer.appendChild(createFilter(categorie.name)) 
@@ -34,7 +34,7 @@ const displayCategories = (categories) => {
 // cela permet de créer un filter 
 const createFilter = (categorie) => {
   const filter = document.createElement("button")
-  filter.classList.add("filters")
+  filter.classList.add("filter")
   filter.innerText = categorie
   return filter
 }

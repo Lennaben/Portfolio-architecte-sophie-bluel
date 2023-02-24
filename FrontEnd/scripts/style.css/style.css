@@ -263,18 +263,38 @@ footer nav ul {
   justify-content: flex-end;
   margin: 2em;
 }
-
-.filters {
+.filters-container { 
   display: flex;
   justify-content: center;
-  column-gap: 37px;
-  margin-bottom: 37px;
-  border-radius: 60px;
+  column-gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  margin-bottom: 15px;
+  border-radius: 40px;
   background-color: white;
   color: #1d6154;
-  block-size: 50px;
-  padding: 30px 30px 50px;
-  font-weight: 500;
+  border: 2px solid #1d6154;
+  padding:  0px 20px;
   font-weight: bold;
-  
+  font-size: 16px;
+  height: 37px;
+  font-family: "Syne";
 }
+
+button:focus
+{
+color:white;
+}
+
+button:focus
+{
+background-color:#1D6154;
+}
+
+

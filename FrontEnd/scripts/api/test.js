@@ -4,12 +4,71 @@ let selectedCateg = "tous"
 
 const urlCategories = "http://localhost:5678/api/categories"
 
+
+
+// dans un 1er temps nous avons fetch
+
+// Faire une fonction de tri
+// actualiser les resuitats en fonction du filtre
+
+//  installation des works
+
+const urlWorks = "http://localhost:5678/api/works"
+const worksContainer = document.getElementsByClassName("gallery")[0]
+
+function getWorks(selectedCateg) {
+  fetch(urlWorks)
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      let works = data
+      if (works.length > 0) {
+        // console.log("works", data)
+        worksContainer.innerHTML = ""
+        if (selectedCateg === "Tous") {
+          console.log("selected tag case : ", selectedCateg)
+          works.map((work) => {
+            createFigure(work)
+          })
+        } else {
+          console.log("selected tag case : ", selectedCateg)
+          const filteredDatas = filterDatas(works)
+          console.log("tableau de nos data filtrées ", filteredDatas)
+          filteredDatas.map((work) => {
+            createFigure(work)
+          })
+        }
+      }
+      console.log("liste des works", works)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+}
+
+// Créer une balise figure contenant une image et une description(figcaption)
+
+function createFigure(work) {
+  // console.log(work)
+  const figure = document.createElement("figure")
+  const image = new Image()
+  image.src = work.imageUrl
+  image.alt = work.title
+  const figcaption = document.createElement("figcaption")
+  figcaption.innerHTML = work.title
+  figure.appendChild(image)
+  figure.appendChild(figcaption)
+  worksContainer.appendChild(figure)
+}
+
+// *********************************** CATEGORIES **********************************************
 // A REVOIR !!!!!!
 //cela nous permet de recuperer les categories avec fetch en passant par l'API categories
 // fonction asynchrone = ça permet de continuer l'execution de la page pendant le chargement de la fonction (async)
 // await = on attend la validation de tous les AWAIT avant de valider la promesse et retourner  le resulta de la fonction
 
-// dans un 1er temps nous avons fetch
+// Obtenir la liste des catégories
 const getCategories = async () => {
   const data = await fetch(urlCategories)
   const response = await data.json()
@@ -33,73 +92,29 @@ const displayCategories = (categories) => {
     filtersContainer.appendChild(createFilter(categorie.name))
   })
 }
-// cela permet de créer un filter
+
+// Créer un bouton filtre
 const createFilter = (categorie) => {
   const filter = document.createElement("button")
   filter.classList.add("filter")
-  // data attribu
   filter.dataset.categ = categorie
   filter.addEventListener("click", (e) => {
     selectedCateg = e.target.dataset.categ
-    console.log(selectedCateg)
-    getWorks()
+    console.log("fonction createFilter", selectedCateg)
+
+    getWorks(selectedCateg)
   })
   filter.innerText = categorie
   return filter
 }
+
+// Filtrer des datas par catégories
+const filterDatas = (works) => {
+  const filtered = works.filter((work) => work.category.name === selectedCateg)
+  return filtered
+}
+
+// appel de notre fonction pour obtenir les filtres
 getCategories()
+getWorks("Tous")
 
-//  installation des works
-
-const urlWorks = "http://localhost:5678/api/works"
-const worksContainer = document.getElementsByClassName("gallery")[0]
-
-function getWorks() {
-  fetch(urlWorks)
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      let works = data
-      if (works.length > 0) {
-        console.log("works", data)
-        worksContainer.innerHTML = ""
-        // faire le filter, cree un new tableau, utiliser le nouveau tableau a la place de map
-        // quand in clik sur un btn d'un categ cela vas filter les works
-        if (selectedCateg === "tous") {
-          // le .map cela sert a parcourir le tableau.
-          works.map((work) => {
-            createFigure(work)
-          })
-        } else {
-          let filterWorks =
-          filterWorks.map((work) => {            
-            createFigure(work)
-            
-          })
-          // faire un tableau qui corespond a la categ
-          
-        }
-      }
-      console.log(works)
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
-}
-getWorks()
-
-// figure balise HTML pour les image
-
-function createFigure(work) {
-  console.log(work)
-  const figure = document.createElement("figure")
-  const image = new Image()
-  image.src = work.imageUrl
-  image.alt = work.title
-  const figcaption = document.createElement("figcaption")
-  figcaption.innerHTML = work.title
-  figure.appendChild(image)
-  figure.appendChild(figcaption)
-  worksContainer.appendChild(figure)
-}

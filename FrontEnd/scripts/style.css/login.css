@@ -1,0 +1,15 @@
+.login {
+  background-color: #fffbee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_nom {
+  color: rgb(170, 238, 173);
+  display: flex;
+}
+
+.nav_infos {
+  padding: 0 10px;
+  font-size: 1.2em;
+}

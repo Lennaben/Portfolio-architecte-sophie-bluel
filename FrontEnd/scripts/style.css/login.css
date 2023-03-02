@@ -1,15 +1,68 @@
-.login {
-  background-color: #fffbee;
-  display: flex;
-  justify-content: space-between;
+body {
+  background-color: #ffffff;
 }
 
-.nav_nom {
-  color: rgb(170, 238, 173);
+form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
-.nav_infos {
-  padding: 0 10px;
+login-txt{
+  margin-top: 20px;
+}
+
+label {
+  margin-top: 1em;
   font-size: 1.2em;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 5px;
+  border: none;
+  width: 376px;
+  height: 35px;
+  margin: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ 
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1em;
+  height: 36px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+
+.forgot-password {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.forgot-password a {
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+#e-mail{
+  color: #4caf50;
+
 }

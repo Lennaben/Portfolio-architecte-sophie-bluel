@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scripts/style.css/login.css" />
     <link rel="stylesheet" href="./scripts/style.css/style.css" />
-     <link
+    <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
       rel="stylesheet"
-    />   
-      
+    />
+
     <title>login</title>
   </head>
   <body>
-     <header>
+    <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
         <ul>
@@ -26,8 +26,19 @@
       </nav>
     </header>
     <section class="form-container">
-      <!-- le formulaire -->
+      <form action="#" method="post">
+        <!-- <div class="login-txt">Log in</div> -->
+        <label for="e-mail">e-mail:</label>
+        <input type="text" id="e-mail" name="'e-mail'" />
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" />
+
+        <input type="submit" value="Se connecter" />
+        <div class="forgot-password">
+          <a href="#">Mot de passe oublié ?</a>
+        </div>
+      </form>
     </section>
-   
   </body>
 </html>

@@ -2,20 +2,29 @@ body {
   background-color: #ffffff;
 }
 
+login {
+  background-color: #4caf50;
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
-login-txt{
+login-txt {
   margin-top: 20px;
 }
 
 label {
   margin-top: 1em;
   font-size: 1.2em;
+}
+
+.form-groupe {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -26,9 +35,8 @@ input[type="password"] {
   border: none;
   width: 376px;
   height: 35px;
-  margin: 10px;
+  margin: 10px 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
- 
 }
 
 input[type="submit"] {
@@ -46,8 +54,6 @@ input[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
-
-
 .forgot-password {
   margin-top: 0.5em;
   text-align: center;
@@ -62,7 +68,3 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 
-#e-mail{
-  color: #4caf50;
-
-}

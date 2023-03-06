@@ -26,15 +26,20 @@
       </nav>
     </header>
     <section class="form-container">
-      <form action="#" method="post">
+      <form method="post">
+        <h2 class="login">Login</h2>
         <!-- <div class="login-txt">Log in</div> -->
-        <label for="e-mail">e-mail:</label>
-        <input type="text" id="e-mail" name="'e-mail'" />
+        <div class="form-groupe">
+          <label for="e-mail">E-mail :</label>
+          <input type="text" id="e-mail" name="'e-mail'" />
+        </div>
 
+        <div class="form-groupe">
         <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" />
+        </div>
 
-        <input type="submit" value="Se connecter" />
+        <input id="btn-login" type="submit" value="Se connecter" />
         <div class="forgot-password">
           <a href="#">Mot de passe oublié ?</a>
         </div>
@@ -42,3 +47,7 @@
     </section>
   </body>
 </html>
+
+
+
+

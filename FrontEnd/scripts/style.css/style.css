@@ -90,6 +90,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -104,10 +105,14 @@ menu,
 nav,
 section {
   display: block;
+  
 }
 body {
   line-height: 1;
+  background-color: #e5e5e5;
+  background-color: #ffffff;
 }
+
 ol,
 ul {
   list-style: none;
@@ -133,6 +138,7 @@ body {
   margin: auto;
   font-family: "Work Sans";
   font-size: 14px;
+  
 }
 
 header {
@@ -164,6 +170,7 @@ h2 {
   font-weight: 700;
   font-size: 30px;
   color: #1d6154;
+  margin: 30px;
 }
 nav ul {
   display: flex;
@@ -176,7 +183,8 @@ nav li {
 }
 
 li:hover {
-  color: #b1663c;
+  color: #000000;
+  font-weight: bold;
 }
 #introduction {
   display: flex;
@@ -263,7 +271,7 @@ footer nav ul {
   justify-content: flex-end;
   margin: 2em;
 }
-.filters-container { 
+.filters-container {
   display: flex;
   justify-content: center;
   column-gap: 10px;
@@ -280,21 +288,22 @@ footer nav ul {
   background-color: white;
   color: #1d6154;
   border: 2px solid #1d6154;
-  padding:  0px 20px;
+  padding: 0px 20px;
   font-weight: bold;
   font-size: 16px;
   height: 37px;
   font-family: "Syne";
 }
 
-button:focus
-{
-color:white;
+button:focus {
+  color: white;
 }
 
-button:focus
-{
-background-color:#1D6154;
+button:focus {
+  background-color: #1d6154;
 }
 
-
+a{
+  text-decoration: none;
+  font-weight: bold;
+}

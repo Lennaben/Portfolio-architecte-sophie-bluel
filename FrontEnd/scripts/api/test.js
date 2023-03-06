@@ -4,8 +4,6 @@ let selectedCateg = "tous"
 
 const urlCategories = "http://localhost:5678/api/categories"
 
-
-
 // dans un 1er temps nous avons fetch
 
 // Faire une fonction de tri
@@ -118,3 +116,24 @@ const filterDatas = (works) => {
 getCategories()
 getWorks("Tous")
 
+const urlLogin = "http://localhost:5678/api/users/login"
+
+const getLogin = async () => {
+  const email = document.getElementById("e-mail").value
+  console.log(email)
+  let response = await fetch(urlLogin, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(user),
+  })
+}
+
+document.getElementById("btn-login").addEventListener("click", (e) => {
+  getLogin()
+})
+
+
+
+document.forms["myform"].submit()

@@ -90,7 +90,6 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -105,12 +104,14 @@ menu,
 nav,
 section {
   display: block;
-  
 }
 body {
   line-height: 1;
   background-color: #e5e5e5;
   background-color: #ffffff;
+}
+img {
+  width: 19.36px;
 }
 
 ol,
@@ -138,7 +139,6 @@ body {
   margin: auto;
   font-family: "Work Sans";
   font-size: 14px;
-  
 }
 
 header {
@@ -178,7 +178,7 @@ nav ul {
   list-style-type: none;
 }
 nav li {
-  padding: 0 10px;
+  padding: 0 30px;
   font-size: 1.2em;
 }
 
@@ -303,7 +303,10 @@ button:focus {
   background-color: #1d6154;
 }
 
-a{
+a {
   text-decoration: none;
-  font-weight: bold;
+  color: #000000;
+}
+
+.info-nav {
 }

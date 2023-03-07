@@ -26,12 +26,12 @@
       </nav>
     </header>
     <section class="form-container">
-      <form method="post">
+      <form method="POST">
         <h2 class="login">Login</h2>
         <!-- <div class="login-txt">Log in</div> -->
         <div class="form-groupe">
-          <label for="e-mail">E-mail :</label>
-          <input type="text" id="e-mail" name="'e-mail'" />
+          <label for="email">E-mail :</label>
+          <input type="text" id="email" name="email" />
         </div>
 
         <div class="form-groupe">
@@ -39,12 +39,13 @@
         <input type="password" id="password" name="password" />
         </div>
 
-        <input id="btn-login" type="submit" value="Se connecter" />
+        <button id="btn-login" type="submit" >Se connecter</button>
         <div class="forgot-password">
           <a href="#">Mot de passe oublié ?</a>
         </div>
       </form>
     </section>
+    <script src="scripts/api/login.js"></script>
   </body>
 </html>
 

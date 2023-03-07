@@ -39,7 +39,7 @@ input[type="password"] {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   background-color: #4caf50;
   color: white;
   padding: 0.5em 1em;
@@ -50,7 +50,7 @@ input[type="submit"] {
   height: 36px;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
@@ -68,3 +68,16 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+#email-error-message {
+  display: none;
+}
+
+#email-error-message {
+  display: block;
+  color: red;
+}
+
+#email-error-message {
+  display: block;
+  color: red;
+}

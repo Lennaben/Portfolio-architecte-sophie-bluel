@@ -68,16 +68,18 @@ button[type="submit"]:hover {
   text-decoration: underline;
 }
 
+
+
 #email-error-message {
   display: none;
+  color: red;
 }
-
+#password-error-message {
+  display: none;
+  color: red;
+}
+/* 
 #email-error-message {
   display: block;
   color: red;
-}
-
-#email-error-message {
-  display: block;
-  color: red;
-}
+} */

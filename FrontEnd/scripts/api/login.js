@@ -1,6 +1,6 @@
 const urlLogin = "http://localhost:5678/api/users/login"
 
-const sendBtn = document.querySelector("#btn-login")
+// const sendBtn = document.querySelector("#btn-login")
 
 const btnLog = document.querySelector("#btn-login")
 btnLog.addEventListener("click", (e) => {
@@ -12,27 +12,30 @@ btnLog.addEventListener("click", (e) => {
 async function getLogin() {
   const email = document.getElementById("email").value
   const password = document.getElementById("password").value
-  const emailErrorMessage = document.getElementById("email-error-message")
-  const passwordErrorMessage = document.getElementById("password-error-message")
+
   const user = {
     email: email,
     password: password,
   }
-  if (!isValidEmail(email)) {
-    emailErrorMessage.innerHTML = "Veuillez entrer une adresse email valide."
-    // on l'affiche 
-    emailErrorMessage.style.display = "block"
-  } else {
-    emailErrorMessage.innerHTML = " "
-    emailErrorMessage.style.display = "none"
-  }
 
-  if (!isPasswordValid(password)) {
-    passwordErrorMessage.innerHTML = "Veuillez entrer un password valide."
-    passwordErrorMessage.style.display = "block"
-  } else {
-    passwordErrorMessage.innerHTML = ""
-    passwordErrorMessage.style.display = "none"
+  // console.log(isValidEmail(email))
+
+  // if (!isValidEmail(email)) {
+  //   emailErrorMessage.innerHTML = "Veuillez entrer une adresse email valide."
+  //   // on l'affiche
+  //   emailErrorMessage.style.display = "block"
+  // } else {
+  //   emailErrorMessage.innerHTML = ""
+  //   emailErrorMessage.style.display = "none"
+  // }
+
+  // if (!isPasswordValid(password)) {
+  //   passwordErrorMessage.innerHTML = "Veuillez entrer un password valide."
+  //   passwordErrorMessage.style.display = "block"
+  // } else {
+  //   passwordErrorMessage.innerHTML = ""
+  //   passwordErrorMessage.style.display = "none"
+  if (isValidEmail(email) && isPasswordValid(password)) {
     //    poste moi mon user , emballe le en json et envoie le à l'adresse urlLogin, la reponse c'est l'accusé de reception
     let response = await fetch(urlLogin, {
       method: "POST",
@@ -50,7 +53,7 @@ async function getLogin() {
       window.location.href = "index.html"
     } else {
       console.log("pas envoyé")
-      // alert("Utilisateur non trouvé")
+      alert("Utilisateur non trouvé")
     }
   }
 }
@@ -67,10 +70,33 @@ async function getLogin() {
 // }
 
 function isValidEmail(email) {
+  const emailErrorMessage = document.getElementById("email-error-message")
   // Vérifier si l'email est valide, par exemple :
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  const test = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  if (!test) {
+    emailErrorMessage.innerHTML = "Veuillez entrer une adresse email valide."
+    // on l'affiche
+    emailErrorMessage.style.display = "block"
+    return false
+  } else {
+    emailErrorMessage.innerHTML = ""
+    emailErrorMessage.style.display = "none"
+    return true
+  }
 }
 
 function isPasswordValid(password) {
-  return /^(?=.*[a-z].*[a-z].*[a-z])(?=.*\d).{5,}$/.test(password)
+  const passwordErrorMessage = document.getElementById("password-error-message")
+
+  const test = /^(?=.*[a-z].*[a-z].*[a-z])(?=.*\d).{5,}$/.test(password)
+
+  if (!test) {
+    passwordErrorMessage.innerHTML = "Veuillez entrer un password valide."
+    passwordErrorMessage.style.display = "block"
+    return false
+  } else {
+    passwordErrorMessage.innerHTML = ""
+    passwordErrorMessage.style.display = "none"
+    return true
+  }
 }

@@ -120,3 +120,10 @@ const filterDatas = (works) => {
 getCategories()
 getWorks("Tous")
 
+
+// fentere modal 
+
+// faire une fonction pour afficher la modale
+// faire un addEventListener sur le btn modifier 
+// et lancer la fonction au clik 
+

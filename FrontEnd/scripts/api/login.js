@@ -20,13 +20,17 @@ async function getLogin() {
   }
   if (!isValidEmail(email)) {
     emailErrorMessage.innerHTML = "Veuillez entrer une adresse email valide."
+    // on l'affiche 
     emailErrorMessage.style.display = "block"
-  } else if (!isPasswordValid(password)) {
-    passwordErrorMessage.innerHTML = "Veuillez entrer un password valide."
-    passwordErrorMessage.style.display = "block"
   } else {
     emailErrorMessage.innerHTML = " "
     emailErrorMessage.style.display = "none"
+  }
+
+  if (!isPasswordValid(password)) {
+    passwordErrorMessage.innerHTML = "Veuillez entrer un password valide."
+    passwordErrorMessage.style.display = "block"
+  } else {
     passwordErrorMessage.innerHTML = ""
     passwordErrorMessage.style.display = "none"
     //    poste moi mon user , emballe le en json et envoie le à l'adresse urlLogin, la reponse c'est l'accusé de reception
@@ -46,7 +50,7 @@ async function getLogin() {
       window.location.href = "index.html"
     } else {
       console.log("pas envoyé")
-      alert("Utilisateur non trouvé")
+      // alert("Utilisateur non trouvé")
     }
   }
 }
@@ -68,5 +72,5 @@ function isValidEmail(email) {
 }
 
 function isPasswordValid(password) {
-  return /^(?=.*[a-z].*[a-z].*[a-z]).{4}$/.test(password)
+  return /^(?=.*[a-z].*[a-z].*[a-z])(?=.*\d).{5,}$/.test(password)
 }

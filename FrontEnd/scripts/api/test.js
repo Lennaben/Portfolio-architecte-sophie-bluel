@@ -127,3 +127,30 @@ getWorks("Tous")
 // faire un addEventListener sur le btn modifier 
 // et lancer la fonction au clik 
 
+
+// Sélectionner le bouton "Modifier"
+var modifierBtn = document.getElementById("modifier");
+
+// Sélectionner la fenêtre modale
+var modal = document.getElementById("modal");
+
+// Sélectionner le bouton de fermeture de la fenêtre modale
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// Ajouter un événement au clic sur le bouton "Modifier"
+modifierBtn.onclick = function() {
+  modal.style.display = "block"; // Afficher la fenêtre modale
+}
+
+// Ajouter un événement au clic sur le bouton de fermeture de la fenêtre modale
+closeBtn.onclick = function() {
+  modal.style.display = "none"; // Masquer la fenêtre modale
+}
+
+// Ajouter un événement pour fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none"; // Masquer la fenêtre modale
+  }
+}
+

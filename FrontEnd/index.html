@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="./scripts/style.css/style.css" />
   </head>
   <body>
-    <div class="adminBarre">Barre damin</div>
+    <div class="adminBarre">
+      Barre damin <i class="fa-thin fa-pen-to-square" class="edit"></i>
+      <h3>Mode édition</h3>
+      <button class="btn">Publier les changements</button>
+    </div>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
@@ -80,6 +84,14 @@
     <a class="link-login" href="login.html"></a>
 
     <!-- Créer le HTML du la modal -->
+    <button id="modifier">Modifier</button>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Contenu de la fenêtre modale</p>
+      </div>
+    </div>
 
     <script src="scripts/api/admin.js"></script>
     <script src="scripts/api/test.js"></script>

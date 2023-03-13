@@ -10,14 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href=" https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap">
+    <script
+      src="https://kit.fontawesome.com/ddf550c6f9.js"
+      crossorigin="anonymous"
+    ></script>
 
     <meta name="description" content="" />
     <link rel="stylesheet" href="./scripts/style.css/style.css" />
   </head>
   <body>
     <div class="adminBarre">
-      Barre damin <i class="fa-thin fa-pen-to-square" class="edit"></i>
+      <i class="fa-regular fa-pen-to-square edit-icon"></i>
       <h3>Mode édition</h3>
       <button class="btn">Publier les changements</button>
     </div>
@@ -59,6 +62,7 @@
       </section>
       <section id="portfolio">
         <h2>Mes Projets</h2>
+        <i class="fa-regular fa-pen-to-square edit-icon"></i>
 
         <div class="filters-container"></div>
         <div class="gallery"></div>
@@ -88,25 +92,33 @@
 
     <!-- Créer le HTML du la modal -->
 
-    <button id="modifier">Modifier</button>
+    <button id="modifier">modifier</button>
 
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2 class="nom-modal">Galerrie photos </h2>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <hr>
-        <button class="btn-modal"> Ajouter une photo</button>
+        <h2 class="nom-modal">Galerie photos</h2>
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <hr />
+        <button class="btn-modal"><h5>Ajouter une photo</h5></button>
+        <!-- btn supprimer  -->
+        <ul id="liste">
+          <li>
+            <button class="btn-delete" onclick="supprimerElement(this)">
+              Supprimer la gallerie
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
 

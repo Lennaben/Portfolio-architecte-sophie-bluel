@@ -154,3 +154,9 @@ window.onclick = function(event) {
   }
 }
 
+// _____________________________________________________________________
+
+    // <!-- btn supprimer  -->
+function supprimerElement(element) {
+  element.parentNode.remove()
+}

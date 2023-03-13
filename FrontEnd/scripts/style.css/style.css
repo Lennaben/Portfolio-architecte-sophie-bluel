@@ -327,9 +327,12 @@ h3 {
   font-weight: bold;
   size: 14px;
   border-radius: 60px;
-  width: 216px;
+  width: 200px;
   height: 30px;
   margin: 5px;
+  border: none;
+
+
 }
 
 /* edit {
@@ -364,8 +367,9 @@ h3 {
   background-color: #fefefe;
   margin: 15% auto; /* Centrer la fenêtre modale */
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Ajuster la largeur de la fenêtre modale */
+  border-radius:10px;
+  width: 500px; 
+  height: 600px;
 }
 
 .close {
@@ -382,3 +386,12 @@ h3 {
   cursor: pointer;
 }
 
+#modifier{
+  display: flex;
+}
+
+.nom-modal{
+  color: #000000;
+  display: flex;
+  justify-content: center;
+}

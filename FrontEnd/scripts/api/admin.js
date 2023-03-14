@@ -11,8 +11,8 @@ console.log(localStorage.getItem("token"))
 
 
 
-_______________________________________
-// essai 2
+// _______________________________________
+// // essai 2
 // let url = window.login.html;
 
 // if (url.includes ("secret")){

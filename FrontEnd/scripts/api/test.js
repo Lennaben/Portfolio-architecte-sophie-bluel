@@ -16,6 +16,8 @@ const token = localStorage.getItem("token")
 const urlWorks = "http://localhost:5678/api/works"
 const worksContainer = document.getElementsByClassName("gallery")[0]
 
+const modalGalleryContainer = document.querySelector(".modal-gallery-container")
+
 function getWorks(selectedCateg) {
   fetch(urlWorks)
     .then((response) => {
@@ -39,7 +41,7 @@ function getWorks(selectedCateg) {
             createFigure(work)
           })
         }
-        ;("")
+        works.map((work) => createMiniature(work))
       }
       console.log("liste des works", works)
     })
@@ -61,6 +63,21 @@ function createFigure(work) {
   figure.appendChild(image)
   figure.appendChild(figcaption)
   worksContainer.appendChild(figure)
+  
+}
+
+function createMiniature(work) {
+  const figure = document.createElement("figure")
+  figure.classList.add("miniFigure")
+  const image = new Image()
+  image.src = work.imageUrl
+  image.classList.add("miniImage")
+  const figcaption = document.createElement("figcaption")
+  figcaption.innerHTML = "éditer"
+  figcaption.classList.add("figEdit")
+  figure.appendChild(image)
+  figure.appendChild(figcaption)
+  modalGalleryContainer.appendChild(figure)
 }
 
 // *********************************** CATEGORIES **********************************************
@@ -87,10 +104,6 @@ const getCategories = async () => {
 
 // afficher les categories
 const filtersContainer = document.querySelector(".filters-container ")
-token
-  ? (filtersContainer.style.display = "none")
-  : (filtersContainer.style.display = "flex")
-
 
 const displayCategories = (categories) => {
   // pour chacune des categories, on attache a notre container le resultat de la fonction createFilter
@@ -133,10 +146,6 @@ getWorks("Tous")
 // Sélectionner le bouton "Modifier"
 var modifierBtn = document.getElementById("modifier")
 
-token
-  ? (modifierBtn.style.display = "bloc")
-  : (modifierBtn.style.display = "none")
-
 // Sélectionner la fenêtre modale
 var modal = document.getElementById("modal")
 
@@ -145,7 +154,7 @@ var closeBtn = document.getElementsByClassName("close")[0]
 
 // Ajouter un événement au clic sur le bouton "Modifier"
 modifierBtn.onclick = function () {
-  modal.style.display = "block" // Afficher la fenêtre modale
+  modal.style.display = "flex" // Afficher la fenêtre modale
 }
 
 // Ajouter un événement au clic sur le bouton de fermeture de la fenêtre modale
@@ -167,9 +176,12 @@ function supprimerElement(element) {
   element.parentNode.remove()
 }
 
-
 const adminNav = document.querySelector(".adminBarre")
 
 token
-  ? (adminNav.style.display = "bloc")
-  : (adminNav.style.display = "none")
+  ? (adminNav.style.display = "bloc") &&
+    (modifierBtn.style.display = "bloc") &&
+    (filtersContainer.style.display = "none")
+  : (adminNav.style.display = "none") &&
+    (modifierBtn.style.display = "none") &&
+    (filtersContainer.style.display = "flex")

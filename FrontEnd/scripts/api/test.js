@@ -78,6 +78,7 @@ function createMiniature(work) {
   figure.appendChild(image)
   figure.appendChild(figcaption)
   modalGalleryContainer.appendChild(figure)
+
 }
 
 // *********************************** CATEGORIES **********************************************
@@ -169,19 +170,40 @@ window.onclick = function (event) {
   }
 }
 
-// _____________________________________________________________________
+var modal2 = document.getElementById("myModal2")
+var btn2 = document.getElementById("openModal2")
+var span2 = document.getElementsByClassName("close")[1]
 
-// <!-- btn supprimer  -->
-function supprimerElement(element) {
-  element.parentNode.remove()
+btn2.onclick = function () {
+  modal2.style.display = "block"
 }
 
-const adminNav = document.querySelector(".adminBarre")
+span2.onclick = function () {
+  modal2.style.display = "none"
+}
 
-token
-  ? (adminNav.style.display = "bloc") &&
-    (modifierBtn.style.display = "bloc") &&
-    (filtersContainer.style.display = "none")
-  : (adminNav.style.display = "none") &&
-    (modifierBtn.style.display = "none") &&
-    (filtersContainer.style.display = "flex")
+window.onclick = function (event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none"
+  }
+}
+
+
+var modal3 = document.getElementById("myModal3")
+var btn3 = document.getElementById("openModal3")
+var span3 = document.getElementsByClassName("close")[2]
+
+btn3.onclick = function () {
+  modal3.style.display = "block"
+}
+
+span3.onclick = function () {
+  modal3.style.display = "none"
+}
+
+window.onclick = function (event) {
+  if (event.target == modal3) {
+    modal3.style.display = "none"
+  }
+}
+

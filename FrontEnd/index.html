@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="adminBarre">
-      <i class="fa-regular fa-pen-to-square edit-icon"></i>
+      <i class="fa-regular fa-pen-to-square icon"></i>
       <h3>Mode édition</h3>
       <button class="btn">Publier les changements</button>
     </div>
@@ -61,8 +61,13 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>Mes Projets <span class="modifyLinkContainer"><i class="fa-regular fa-pen-to-square edit-icon"></i><button id="modifier">modifier</button></span></h2>
-        
+        <h2>
+          Mes Projets
+          <span class="modifyLinkContainer"
+            ><i class="fa-regular fa-pen-to-square edit-icon"></i
+            ><button id="modifier">modifier</button></span
+          >
+        </h2>
 
         <div class="filters-container"></div>
         <div class="gallery"></div>
@@ -92,15 +97,11 @@
 
     <!-- Créer le HTML du la modal -->
 
-    
-
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2 class="nom-modal">Galerie photos</h2>
-        <div class="modal-gallery-container">
-
-        </div>
+        <div class="modal-gallery-container"></div>
         <hr />
         <button class="btn-modal"><h5>Ajouter une photo</h5></button>
         <!-- btn supprimer  -->
@@ -111,6 +112,37 @@
             </button>
           </li>
         </ul>
+      </div>
+    </div>
+
+    <button id="openModal2">modifier</button>
+    <div id="myModal2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="title_modal">Ajout photo</p>
+
+        <button id="openModal3">
+          <h5 class="title-ajout-photo">+ Ajouter photos</h5>
+        </button>
+        <!-- <h6>jpn, png : 4mo max</h6> -->
+
+        <label for="titre" class="title_input">Titre</label>
+        <input type="titre" class="title-input-modal" />
+        <label for="catégorie" class="title_input">Catégorie</label>
+        <input type="catégorie" class="title-input-modal" />
+
+        <div id="myModal3" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="form-modal">
+              <input type="file" name="photos" accept="image/*" multiple />
+              <br />
+              <button type="submit">Ajouter</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- _______________________ -->
       </div>
     </div>
 

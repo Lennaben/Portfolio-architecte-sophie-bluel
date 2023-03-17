@@ -6,8 +6,6 @@ const urlCategories = "http://localhost:5678/api/categories"
 
 // dans un 1er temps nous avons fetch
 
-const token = localStorage.getItem("token")
-
 // Faire une fonction de tri
 // actualiser les resuitats en fonction du filtre
 
@@ -63,22 +61,43 @@ function createFigure(work) {
   figure.appendChild(image)
   figure.appendChild(figcaption)
   worksContainer.appendChild(figure)
-  
 }
 
+//  <div class="miniFigure">
+//    <div>
+//      <i class="fa-regular fa-pen-to-square edit-icon"></i>
+//      <img
+//        src="http://localhost:5678/images/appartement-paris-v1651287270508.png"
+//        class="miniImage"
+//      />
+//    </div>
+//    <p class="figEdit">éditer</p>
+//  </div>
+
+
 function createMiniature(work) {
+  const icon = document.createElement("i")
+  icon.classList.add("fa-regular")
+  icon.classList.add("fa-pen-to-square")
+  icon.classList.add("edit-icon")
+  
+  console.log(icon)
+
   const figure = document.createElement("figure")
   figure.classList.add("miniFigure")
+
   const image = new Image()
   image.src = work.imageUrl
   image.classList.add("miniImage")
+
   const figcaption = document.createElement("figcaption")
   figcaption.innerHTML = "éditer"
   figcaption.classList.add("figEdit")
+
+  figure.appendChild(icon)
   figure.appendChild(image)
   figure.appendChild(figcaption)
   modalGalleryContainer.appendChild(figure)
-
 }
 
 // *********************************** CATEGORIES **********************************************
@@ -188,7 +207,6 @@ window.onclick = function (event) {
   }
 }
 
-
 var modal3 = document.getElementById("myModal3")
 var btn3 = document.getElementById("openModal3")
 var span3 = document.getElementsByClassName("close")[2]
@@ -206,4 +224,5 @@ window.onclick = function (event) {
     modal3.style.display = "none"
   }
 }
+
 

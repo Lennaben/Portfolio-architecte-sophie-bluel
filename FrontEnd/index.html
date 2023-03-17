@@ -39,7 +39,9 @@
     <main>
       <section id="introduction">
         <figure>
-          <img src="./assets/images/sophie-bluel.png" alt="" />
+          <img src="./assets/images/sophie-bluel.png" alt="" />   
+          <i class="fa-regular fa-pen-to-square icon-2"></i>       
+    <button id="openModal2">modifier</button>
         </figure>
         <article>
           <h2>Designer d'espace</h2>
@@ -102,6 +104,8 @@
         <span class="close">&times;</span>
         <h2 class="nom-modal">Galerie photos</h2>
         <div class="modal-gallery-container"></div>
+      
+
         <hr />
         <button class="btn-modal"><h5>Ajouter une photo</h5></button>
         <!-- btn supprimer  -->
@@ -115,29 +119,47 @@
       </div>
     </div>
 
-    <button id="openModal2">modifier</button>
     <div id="myModal2" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <p class="title_modal">Ajout photo</p>
 
         <button id="openModal3">
+          <!-- <i class="fa-regular fa-image image-icon"></i> -->
           <h5 class="title-ajout-photo">+ Ajouter photos</h5>
         </button>
         <!-- <h6>jpn, png : 4mo max</h6> -->
 
+
+        <form action="#" class="formulaire_modal">
         <label for="titre" class="title_input">Titre</label>
         <input type="titre" class="title-input-modal" />
         <label for="catégorie" class="title_input">Catégorie</label>
         <input type="catégorie" class="title-input-modal" />
+        <select id="list_deroulante" name="choix">
+          <option value="option2">Option 2</option>
+          <option value="option1">Option 1</option>
+          <option value="option1">Option 1</option>
+          <option value="option3">Option 3</option> 
+           </select>
+        </form>
 
-        <div id="myModal3" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <form class="form-modal">
+     
+
+
+
+
+        <hr />
+        <button class="btn_valide">Valider</button>
+
+        <div id="myModal3" class="modal">         
+          <div class="container-modal">
+            <div class="modal-content">              
+              <span class="close">&times;</span>
+              <form class="form-modal">
               <input type="file" name="photos" accept="image/*" multiple />
               <br />
-              <button type="submit">Ajouter</button>
+              <button class="modal-ajout-photo" stype="submit">Ajouter</button>
             </form>
           </div>
         </div>
@@ -145,6 +167,17 @@
         <!-- _______________________ -->
       </div>
     </div>
+    <!-- 
+    <div class="miniFigure">
+      <div>
+        <i class="fa-regular fa-pen-to-square edit-icon"></i>
+        <img
+          src="http://localhost:5678/images/appartement-paris-v1651287270508.png"
+          class="miniImage"
+        />
+      </div>
+      <p class="figEdit">éditer</p>
+    </div> -->
 
     <script src="scripts/api/admin.js"></script>
     <script src="scripts/api/test.js"></script>

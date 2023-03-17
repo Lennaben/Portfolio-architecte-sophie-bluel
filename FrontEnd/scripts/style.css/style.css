@@ -197,6 +197,7 @@ li:hover {
   display: block;
   margin: auto;
   width: 80%;
+  padding-bottom: 20px;
 }
 
 #introduction article {
@@ -527,6 +528,7 @@ h5 {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
+  text-align: left;
 }
 
 .close {
@@ -552,6 +554,14 @@ h5 {
 #openModal2 {
   background-color: #ffffff;
   border: none;
+  
+  
+}
+
+.icon-2{
+  margin-left: 50px;
+
+  
 }
 
 .title_modal {
@@ -565,6 +575,7 @@ h5 {
   width: 420px;
   height: 170px;
   background-color: #e8f1f6;
+  border: none;
   /* background-color: darkblue; */
 }
 
@@ -572,7 +583,7 @@ h5 {
   color: #306685;
   background-color: #cbd6dc;
   border-radius: 50px;
-  width: 200px;
+  width: 170px;
   height: 36px;
   padding-top: 15px;
 }
@@ -582,12 +593,57 @@ h5 {
   box-shadow: rgba(52, 52, 52, 0.2) 0px 7px 29px 0px;
   height: 50px;
   border: none;
-  
 }
 
 .title_input {
   margin-top: 30px;
-  
-  
+  /* text-align: left; */
   margin: 2em 0 1em 0;
+}
+
+hr {
+  background-color: #b3b3b3;
+  margin-top: 50px;
+}
+
+.btn_valide {
+  width: 240px;
+  height: 36px;
+  border-radius: 60px;
+  margin-top: 40px;
+  border: none;
+  color: white;
+  background-color: #a7a7a7;
+  font-family: "syne";
+  font-weight: 700;
+}
+
+.image-icon {
+  display: flex;
+  color: #b9c5cc;
+  border: none;
+
+  font-size: 60px;
+  justify-content: center;
+}
+
+.modal-ajout-photo {
+  width: 230px;
+  height: 36px;
+  border-radius: 60px;
+  background-color: #1d6154;
+  border: none;
+  color: white;
+  font-family: "syne";
+}
+
+.formulaire_modal{
+  display: flex;
+  flex-direction: column;
+}
+
+#list_deroulante{
+  border: none;
+  background-color:  red;
+
 }

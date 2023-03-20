@@ -41,7 +41,7 @@
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt="" />   
           <i class="fa-regular fa-pen-to-square icon-2"></i>       
-    <button id="openModal2">modifier</button>
+          <button id="openModal2">modifier</button>
         </figure>
         <article>
           <h2>Designer d'espace</h2>
@@ -124,28 +124,30 @@
         <span class="close">&times;</span>
         <p class="title_modal">Ajout photo</p>
 
-        <button id="openModal3">
+        <!-- <button id="openModal3"> -->
           <!-- <i class="fa-regular fa-image image-icon"></i> -->
-          <h5 class="title-ajout-photo">+ Ajouter photos</h5>
-        </button>
-        <!-- <h6>jpn, png : 4mo max</h6> -->
-
-
-        <form action="#" class="formulaire_modal">
+          <!-- <h5 class="title-ajout-photo">+ Ajouter photos</h5> -->
+        <!-- </button> -->
+        
+      <form method="POST" class="formulaire_modal" action="/" enctype="multipart/form-data">
+        <div class="uploadContainer">       
+          <i class="fa-thin fa-image-landscape"></i>
+            <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">         <!-- <pjpn, png : 4mo max</p> -->
+          
+          <img id="preview">
+        </div>
         <label for="titre" class="title_input">Titre</label>
         <input type="titre" class="title-input-modal" />
         <label for="catégorie" class="title_input">Catégorie</label>
-        <input type="catégorie" class="title-input-modal" />
-        <select id="list_deroulante" name="choix">
-          <option value="option2">Option 2</option>
-          <option value="option1">Option 1</option>
-          <option value="option1">Option 1</option>
-          <option value="option3">Option 3</option> 
-           </select>
-        </form>
+        <select id="list_deroulante" class='selectCategory' name="choix">
+        <option value=""  class="optionCategory"></option>      
+        </select>
+
+      </form>
+        <form action="#" class="formulaire_modal">
+      </form>
 
      
-
 
 
 
@@ -156,11 +158,11 @@
           <div class="container-modal">
             <div class="modal-content">              
               <span class="close">&times;</span>
-              <form class="form-modal">
-              <input type="file" name="photos" accept="image/*" multiple />
-              <br />
-              <button class="modal-ajout-photo" stype="submit">Ajouter</button>
-            </form>
+             <form class="form-modal">
+               <input type="file" name="photos" accept="image/*" multiple />
+               <br />
+               <button class="modal-ajout-photo" stype="submit">Ajouter</button>
+             </form>
           </div>
         </div>
 
@@ -181,5 +183,6 @@
 
     <script src="scripts/api/admin.js"></script>
     <script src="scripts/api/test.js"></script>
+  
   </body>
 </html>

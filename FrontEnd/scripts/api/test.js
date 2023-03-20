@@ -74,13 +74,12 @@ function createFigure(work) {
 //    <p class="figEdit">éditer</p>
 //  </div>
 
-
 function createMiniature(work) {
   const icon = document.createElement("i")
   icon.classList.add("fa-regular")
   icon.classList.add("fa-pen-to-square")
   icon.classList.add("edit-icon")
-  
+
   console.log(icon)
 
   const figure = document.createElement("figure")
@@ -114,6 +113,10 @@ const getCategories = async () => {
 
   //  on copie dans un tableau la reponse de l'API
   const arr = [...response]
+  const select = document.querySelector("#list_deroulante")
+  arr.map((item) => {
+    getOptions(item, select)
+  })
   //on ajoute la categories Tous, au debut de notre tableau (unshift = permet d'ajouter un element au debut d'un tableau)
   arr.unshift({ id: 0, name: "Tous" })
   console.log(arr)
@@ -224,5 +227,33 @@ window.onclick = function (event) {
     modal3.style.display = "none"
   }
 }
+
+function getOptions(item, select) {
+  const option = document.createElement("option")
+  option.value = item.name
+  option.innerText = item.name
+  option.classList.add("optionCategory")
+  console.log(item.name)
+  select.appendChild(option)
+}
+
+function previewImage() {
+  var file = document.getElementById("file").files
+  if (file.length > 0) {
+    var fileReader = new FileReader()
+
+    fileReader.onload = function (event) {
+      document
+        .getElementById("preview")
+        .setAttribute("src", event.target.result)
+    }
+
+    fileReader.readAsDataURL(file[0])
+  }
+}
+
+
+// recuprer les donne du formulaire, info des input 
+// faire un fest post pour poster l'image sur le serveur 
 
 

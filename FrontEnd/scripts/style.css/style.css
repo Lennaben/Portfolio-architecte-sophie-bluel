@@ -365,7 +365,6 @@ h3 {
 
 .modal-content {
   background-color: #fefefe;
-  /* margin: 15% auto Centrer la fenêtre modale */
   padding: 20px;
   border-radius: 10px;
   width: 630px;
@@ -554,18 +553,17 @@ h5 {
 #openModal2 {
   background-color: #ffffff;
   border: none;
-  
-  
 }
 
-.icon-2{
-  margin-left: 50px;
-
-  
+.icon-2 {
+  margin-left: 70px;
 }
 
 .title_modal {
-  padding-bottom: 20px;
+  font-size: 30px;
+
+  padding-top: 50px;
+  padding-bottom: 36px;
 }
 
 #openModal3 {
@@ -637,13 +635,38 @@ hr {
   font-family: "syne";
 }
 
-.formulaire_modal{
+.formulaire_modal {
   display: flex;
   flex-direction: column;
 }
 
-#list_deroulante{
+#list_deroulante {
   border: none;
-  background-color:  red;
+  height: 51px;
+  width: 420px;
+  /* background-color:  red; */
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  padding-left: 10px;
+}
+
+.optionCategory {
+  
+}
+
+
+
+#file {
+  padding-bottom: 40px;
 
 }
+
+
+.uploadContainer{
+  background-color:#E8F1F6;
+  width: 420px;
+  height: 170px;  
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+

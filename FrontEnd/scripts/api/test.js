@@ -253,6 +253,8 @@ function previewImage() {
 }
 
 
+
+
 // recuprer les donne du formulaire, info des input 
 // faire un fest post pour poster l'image sur le serveur 
 

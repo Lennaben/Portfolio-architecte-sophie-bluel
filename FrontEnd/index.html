@@ -43,7 +43,9 @@
           <i class="fa-regular fa-pen-to-square icon-2"></i>       
           <button id="openModal2">modifier</button>
         </figure>
-        <article>
+        <article>         
+          <i class="fa-regular fa-pen-to-square"></i>
+          <button id="modifier">modifier</button>
           <h2>Designer d'espace</h2>
           <p>
             Je raconte votre histoire, je valorise vos idées. Je vous accompagne
@@ -67,8 +69,7 @@
           Mes Projets
           <span class="modifyLinkContainer"
             ><i class="fa-regular fa-pen-to-square edit-icon"></i
-            ><button id="modifier">modifier</button></span
-          >
+            ><button id="modifier">modifier</button></span>
         </h2>
 
         <div class="filters-container"></div>
@@ -131,8 +132,8 @@
         
       <form method="POST" class="formulaire_modal" action="/" enctype="multipart/form-data">
         <div class="uploadContainer">       
-          <i class="fa-thin fa-image-landscape"></i>
-            <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">         <!-- <pjpn, png : 4mo max</p> -->
+          <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">         <!-- <pjpn, png : 4mo max</p> -->
+          <!-- <i class="fa-regular fa-image icon-img"></i> -->
           
           <img id="preview">
         </div>
@@ -145,10 +146,7 @@
 
       </form>
         <form action="#" class="formulaire_modal">
-      </form>
-
-     
-
+      </form>    
 
 
         <hr />

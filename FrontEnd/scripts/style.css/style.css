@@ -202,9 +202,15 @@ li:hover {
 
 #introduction article {
   flex: 1;
+  margin-bottom: 280px;
+  
+  
 }
 #introduction h2 {
   margin-bottom: 1em;
+  margin: 0;
+  margin-bottom: 19px;
+  
 }
 
 #introduction p {
@@ -392,6 +398,7 @@ h3 {
   font-size: 14px;
   border: none;
   background-color: #ffffff;
+  padding-bottom: 20px;
 }
 
 .nom-modal {
@@ -399,6 +406,7 @@ h3 {
   display: flex;
   justify-content: center;
   font-family: "work sans";
+  
 }
 hr {
   border: 1px solid #b3b3b3;
@@ -456,6 +464,7 @@ h5 {
   width: 422px;
   row-gap: 25px;
   margin-bottom: 67px;
+  
 }
 
 .miniFigure {
@@ -587,10 +596,11 @@ h5 {
 }
 
 .title-input-modal {
-  width: 400px;
+  width: 420px;
   box-shadow: rgba(52, 52, 52, 0.2) 0px 7px 29px 0px;
   height: 50px;
   border: none;
+
 }
 
 .title_input {
@@ -657,6 +667,9 @@ hr {
 
 #file {
   padding-bottom: 40px;
+  width: 173px ;
+  height:36px ;
+  ;background-color: #1d6154;
 
 }
 
@@ -670,3 +683,11 @@ hr {
   align-items: end;
 }
 
+
+.icon-img{
+  background-color: transparent;
+  color: #B9C5CC;
+  padding-bottom: 30px;
+ 
+
+}

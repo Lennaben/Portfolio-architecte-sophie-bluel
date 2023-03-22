@@ -487,7 +487,8 @@ h5 {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(226, 9, 9, 0.4);
+  
 }
 
 .modal-content {
@@ -554,7 +555,7 @@ h5 {
   align-items: center;
 }
 
-#openModal2 {
+#modal-photo-profil {
   background-color: #ffffff;
   border: none;
 }
@@ -565,7 +566,6 @@ h5 {
 
 .title_modal {
   font-size: 30px;
-
   padding-top: 50px;
   padding-bottom: 36px;
 }
@@ -689,5 +689,7 @@ hr {
 
 
 #modifier-mock{
-  /* a faire */
+  border: none;
+  background-color: white;
+  padding-bottom: 20px;
 }

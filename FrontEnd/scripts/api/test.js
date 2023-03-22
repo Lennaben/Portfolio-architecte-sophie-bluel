@@ -210,9 +210,9 @@ window.onclick = function (event) {
   }
 }
 
-var modal3 = document.getElementById("myModal3")
-var btn3 = document.getElementById("openModal3")
-var span3 = document.getElementsByClassName("close")[2]
+// var modal3 = document.getElementById("myModal3")
+// var btn3 = document.getElementById("openModal3")
+// var span3 = document.getElementsByClassName("close")[2]
 
 btn3.onclick = function () {
   modal3.style.display = "block"

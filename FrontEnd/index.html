@@ -157,12 +157,21 @@
             <div class="modal-content">              
               <span class="close">&times;</span>
              <form class="form-modal">
+
                <input type="file" name="photos" accept="image/*" multiple />
                <br />
                <button class="modal-ajout-photo" stype="submit">Ajouter</button>
              </form>
           </div>
         </div>
+
+        <form>
+  <input type="file" id="image" accept="image/*">
+  <input type="button" value="Afficher l'image" onclick="displayImage()">
+</form>
+
+<div id="imageContainer"></div>
+
 
         <!-- _______________________ -->
       </div>

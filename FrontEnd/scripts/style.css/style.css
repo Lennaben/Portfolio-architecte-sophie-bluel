@@ -203,14 +203,11 @@ li:hover {
 #introduction article {
   flex: 1;
   margin-bottom: 280px;
-  
-  
 }
 #introduction h2 {
   margin-bottom: 1em;
   margin: 0;
   margin-bottom: 19px;
-  
 }
 
 #introduction p {
@@ -406,7 +403,6 @@ h3 {
   display: flex;
   justify-content: center;
   font-family: "work sans";
-  
 }
 hr {
   border: 1px solid #b3b3b3;
@@ -464,7 +460,6 @@ h5 {
   width: 422px;
   row-gap: 25px;
   margin-bottom: 67px;
-  
 }
 
 .miniFigure {
@@ -600,7 +595,6 @@ h5 {
   box-shadow: rgba(52, 52, 52, 0.2) 0px 7px 29px 0px;
   height: 50px;
   border: none;
-
 }
 
 .title_input {
@@ -660,34 +654,35 @@ hr {
 }
 
 .optionCategory {
-  
 }
-
-
 
 #file {
   padding-bottom: 40px;
-  width: 173px ;
-  height:36px ;
-  ;background-color: #1d6154;
-
+  width: 173px;
+  height: 36px;
+  background-color: #1d6154;
 }
 
-
-.uploadContainer{
-  background-color:#E8F1F6;
+.uploadContainer {
+  background-color: #e8f1f6;
   width: 420px;
-  height: 170px;  
+  height: 170px;
   display: flex;
   justify-content: center;
   align-items: end;
 }
 
-
-.icon-img{
+.icon-img {
   background-color: transparent;
-  color: #B9C5CC;
+  color: #b9c5cc;
   padding-bottom: 30px;
- 
+}
 
+#imageContainer {
+  margin-top: 20px;
+}
+
+#imageContainer img {
+  max-width: 100%;
+  height: auto;
 }

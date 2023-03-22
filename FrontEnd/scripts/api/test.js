@@ -253,7 +253,20 @@ function previewImage() {
 }
 
 
+function displayImage() {
+  var input = document.getElementById("image")
+  var container = document.getElementById("imageContainer")
 
+  if (input.files && input.files[0]) {
+    var reader = new FileReader()
+
+    reader.onload = function (e) {
+      container.innerHTML = '<img src="' + e.target.result + '">'
+    }
+
+    reader.readAsDataURL(input.files[0])
+  }
+}
 
 // recuprer les donne du formulaire, info des input 
 // faire un fest post pour poster l'image sur le serveur 

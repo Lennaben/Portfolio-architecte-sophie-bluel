@@ -192,8 +192,8 @@ window.onclick = function (event) {
   }
 }
 
-var modal2 = document.getElementById("myModal2")
-var btn2 = document.getElementById("openModal2")
+var modal2 = document.getElementById("uploadModal")
+var btn2 = document.querySelector(".btn-modal")
 var span2 = document.getElementsByClassName("close")[1]
 
 btn2.onclick = function () {

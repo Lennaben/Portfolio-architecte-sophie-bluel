@@ -192,7 +192,7 @@ window.onclick = function (event) {
   }
 }
 
-var modal2 = document.getElementById("uploadModal")
+var modal2 = document.getElementById("uploadModale")
 var btn2 = document.querySelector(".btn-modal")
 var span2 = document.getElementsByClassName("close")[1]
 
@@ -252,7 +252,6 @@ function previewImage() {
   }
 }
 
-
 function displayImage() {
   var input = document.getElementById("image")
   var container = document.getElementById("imageContainer")
@@ -268,7 +267,5 @@ function displayImage() {
   }
 }
 
-// recuprer les donne du formulaire, info des input 
-// faire un fest post pour poster l'image sur le serveur 
-
-
+// recuprer les donne du formulaire, info des input
+// faire un fest post pour poster l'image sur le serveur

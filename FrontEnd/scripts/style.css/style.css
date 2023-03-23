@@ -570,16 +570,6 @@ h5 {
   padding-bottom: 36px;
 }
 
-#openModal3 {
-  display: flex;
-  justify-content: center;
-  padding-top: 55px;
-  width: 420px;
-  height: 170px;
-  background-color: #e8f1f6;
-  border: none;
-  /* background-color: darkblue; */
-}
 
 .title-ajout-photo {
   color: #306685;

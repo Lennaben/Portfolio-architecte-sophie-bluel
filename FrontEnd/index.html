@@ -134,6 +134,7 @@
           class="formulaire_modal"
           action="/"
           enctype="multipart/form-data"
+          id="form"
         >
           <div class="uploadContainer">
             <input
@@ -143,6 +144,7 @@
               accept="image/*"
               onchange="previewImage();"
             />
+            <button id="btnFileImage">Image</button>
             <!-- <pjpn, png : 4mo max</p> -->
             <!-- <i class="fa-regular fa-image icon-img"></i> -->
             <img id="preview" />
@@ -153,14 +155,15 @@
           <select id="list_deroulante" class="selectCategory" name="choix">
             <option value="" class="optionCategory"></option>
           </select>
+          <hr />
+          <button class="btn_valide">Valider</button>
         </form>
-        <form action="#" class="formulaire_modal"></form>
-        <hr />
-        <button class="btn_valide">Valider</button>
+        <!-- <form action="#" class="formulaire_modal"></form> -->
       </div>
     </div>
 
     <script src="scripts/api/admin.js"></script>
     <script src="scripts/api/test.js"></script>
+    <script src="scripts/api/form.js"></script>
   </body>
 </html>

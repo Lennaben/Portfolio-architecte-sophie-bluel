@@ -440,10 +440,11 @@ h5 {
 }
 
 .edit-icon {
-  margin-bottom: 30px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   color: #000000;
   font-size: 15px;
-  padding-left: 25px;
 }
 
 .icon {
@@ -488,7 +489,6 @@ h5 {
   height: 100%;
   overflow: auto;
   background-color: rgba(226, 9, 9, 0.4);
-  
 }
 
 .modal-content {
@@ -569,7 +569,6 @@ h5 {
   padding-top: 50px;
   padding-bottom: 36px;
 }
-
 
 .title-ajout-photo {
   color: #306685;
@@ -677,9 +676,14 @@ hr {
   height: auto;
 }
 
-
-#modifier-mock{
+#modifier-mock {
   border: none;
   background-color: white;
   padding-bottom: 20px;
+}
+
+
+
+.uploadContainer img{
+  width: 100%;
 }

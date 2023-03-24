@@ -607,13 +607,14 @@ hr {
   background-color: #a7a7a7;
   font-family: "syne";
   font-weight: 700;
+  margin: auto;
+ 
 }
 
 .image-icon {
   display: flex;
   color: #b9c5cc;
   border: none;
-
   font-size: 60px;
   justify-content: center;
 }
@@ -646,19 +647,28 @@ hr {
 }
 
 #file {
-  padding-bottom: 40px;
+  display: none;
+}
+
+#btnFileImage {
   width: 173px;
+  background-color: #cbd6dc;
+  border: none;
+  border-radius: 50px;
   height: 36px;
-  background-color: #1d6154;
+  color: #306685;
+  font-family: "work sans";
+  /* position: absolute; */
+  bottom: 20%;
 }
 
 .uploadContainer {
   background-color: #e8f1f6;
   width: 420px;
   height: 170px;
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: end;
 }
 
 .icon-img {
@@ -682,8 +692,22 @@ hr {
   padding-bottom: 20px;
 }
 
+.uploadContainer #preview {
+  width: 129px;
+  height: 170px;
+  display: none;
+}
 
+.fa-regular {
+  color: #000000;
+  font-size: 15px;
+}
 
-.uploadContainer img{
+.blockUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  row-gap: 20px;
 }

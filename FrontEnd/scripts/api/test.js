@@ -77,8 +77,8 @@ function createFigure(work) {
 function createMiniature(work) {
   const icon = document.createElement("i")
   icon.classList.add("fa-regular")
-  icon.classList.add("fa-pen-to-square")
-  icon.classList.add("edit-icon")
+  icon.classList.add("trash-can")
+  // icon.classList.add("edit-icon")
 
   console.log(icon)
 

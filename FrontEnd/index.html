@@ -67,9 +67,10 @@
       <section id="portfolio">
         <h2>
           Mes Projets
-          <span class="modifyLinkContainer"
-            ><i class="fa-regular fa-pen-to-square edit-icon"></i
-            ><button id="modifier">modifier</button></span
+          <span class="modifyLinkContainer">
+            <i class="fa-regular fa-pen-to-square icon-2"></i>
+
+            <button id="modifier">modifier</button></span
           >
         </h2>
 
@@ -137,15 +138,20 @@
           id="form"
         >
           <div class="uploadContainer">
-            <input
-              type="file"
-              name="file"
-              id="file"
-              accept="image/*"
-              onchange="previewImage();"
-            />
-            <button id="btnFileImage">Image</button>
-            <!-- <pjpn, png : 4mo max</p> -->
+            <div class="blockUpload">
+              <img src="" alt="">
+              <input
+                type="file"
+                name="file"
+                id="file"
+                accept="image/*"
+                onchange="previewImage();"
+              />
+              <button id="btnFileImage">+ Ajouter photo</button>
+
+              <span class="imgDescription">4mo max etc </span>
+            </div>
+
             <!-- <i class="fa-regular fa-image icon-img"></i> -->
             <img id="preview" />
           </div>

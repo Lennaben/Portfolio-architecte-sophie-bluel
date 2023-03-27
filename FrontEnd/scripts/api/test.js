@@ -24,7 +24,7 @@ function getWorks(selectedCateg) {
     .then((data) => {
       let works = data
       if (works.length > 0) {
-        // console.log("works", data)
+      
         worksContainer.innerHTML = ""
         if (selectedCateg === "Tous") {
           console.log("selected tag case : ", selectedCateg)
@@ -268,32 +268,11 @@ function displayImage() {
 }
 
 
-const formData = document.querySelector('form')
-
-const url = "http://localhost:5678/api-docs/send%20a%20new%20work"
-
-const option = {
-  method: 'POST',
-  body: formData
-}
-
-fetch(url, options)
-  .then(response => {
-    if (response.ok) {
-      // La requête a réussi
-      console.log('Image téléchargée avec succès !');
-    } else {
-      // La requête a échoué
-      console.error('Erreur lors du téléchargement de l\'image :', response.status, response.statusText);
-    }
-  })
-  .catch(error => {
-    console.error('Erreur lors du téléchargement de l\'image :', error);
-  });
 
 
 
 
 
-// recuprer les donne du formulaire, info des input
-// faire un fest post pour poster l'image sur le serveur
+
+
+

@@ -78,9 +78,9 @@ function createMiniature(work) {
   const icon = document.createElement("i")
   icon.classList.add("fa-regular")
   icon.classList.add("trash-can")
-  // icon.classList.add("edit-icon")
+  icon.classList.add("edit-icon")
 
-  console.log(icon)
+console.log(icon);
 
   const figure = document.createElement("figure")
   figure.classList.add("miniFigure")
@@ -266,6 +266,34 @@ function displayImage() {
     reader.readAsDataURL(input.files[0])
   }
 }
+
+
+const formData = document.querySelector('form')
+
+const url = "http://localhost:5678/api-docs/send%20a%20new%20work"
+
+const option = {
+  method: 'POST',
+  body: formData
+}
+
+fetch(url, options)
+  .then(response => {
+    if (response.ok) {
+      // La requête a réussi
+      console.log('Image téléchargée avec succès !');
+    } else {
+      // La requête a échoué
+      console.error('Erreur lors du téléchargement de l\'image :', response.status, response.statusText);
+    }
+  })
+  .catch(error => {
+    console.error('Erreur lors du téléchargement de l\'image :', error);
+  });
+
+
+
+
 
 // recuprer les donne du formulaire, info des input
 // faire un fest post pour poster l'image sur le serveur

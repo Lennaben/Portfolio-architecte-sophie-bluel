@@ -5,17 +5,14 @@ const inputFile = document.getElementById("file")
 const preview = document.getElementById("preview")
 const imgDescription = document.querySelector(".imgDescription")
 const blockUpload = document.querySelector(".blockUpload")
-
-
-
-
+const iconImg = document.querySelector(".icon-img")
 
 console.log(btnFileImage, form, inputFile)
 
 btnFileImage.addEventListener("click", (e) => {
   e.preventDefault()
   console.log("Je clique sur le btn")
- 
+
   inputFile.click()
 })
 
@@ -32,14 +29,14 @@ form.addEventListener("submit", (e) => {
 
 // faire disparaitre le btn upload lorsque l'image est afficher
 
-
 // const btnUploadImage = document.getElementById("btnUploadImage")
 
 preview.addEventListener("load", function () {
-  preview.style.display = 'block'
+  preview.style.display = "block"
   btnFileImage.style.display = "none"
   imgDescription.style.display = "none"
   blockUpload.style.display = "none"
+  iconImg.style.display = "none"
   // imgDescription.style.display = "none"
   console.log(preview)
 })

@@ -2,14 +2,12 @@ let selectedCateg = "tous"
 
 // 21/02 je vais installé les categories
 
-const urlCategories = "http://localhost:5678/api/categories"
-
 // dans un 1er temps nous avons fetch
 
 // Faire une fonction de tri
 // actualiser les resuitats en fonction du filtre
 
-//  installation des works
+//************************************ */ Works*************************************************
 
 const urlWorks = "http://localhost:5678/api/works"
 const worksContainer = document.getElementsByClassName("gallery")[0]
@@ -24,7 +22,6 @@ function getWorks(selectedCateg) {
     .then((data) => {
       let works = data
       if (works.length > 0) {
-      
         worksContainer.innerHTML = ""
         if (selectedCateg === "Tous") {
           console.log("selected tag case : ", selectedCateg)
@@ -47,6 +44,8 @@ function getWorks(selectedCateg) {
       console.log(error)
     })
 }
+
+// ******************************MINI FIGURE**********************************
 
 // Créer une balise figure contenant une image et une description(figcaption)
 
@@ -80,7 +79,7 @@ function createMiniature(work) {
   icon.classList.add("trash-can")
   icon.classList.add("edit-icon")
 
-console.log(icon);
+  console.log(icon)
 
   const figure = document.createElement("figure")
   figure.classList.add("miniFigure")
@@ -100,10 +99,11 @@ console.log(icon);
 }
 
 // *********************************** CATEGORIES **********************************************
-// A REVOIR !!!!!!
 //cela nous permet de recuperer les categories avec fetch en passant par l'API categories
 // fonction asynchrone = ça permet de continuer l'execution de la page pendant le chargement de la fonction (async)
 // await = on attend la validation de tous les AWAIT avant de valider la promesse et retourner  le resulta de la fonction
+
+const urlCategories = "http://localhost:5678/api/categories"
 
 // Obtenir la liste des catégories
 const getCategories = async () => {
@@ -117,9 +117,9 @@ const getCategories = async () => {
   arr.map((item) => {
     getOptions(item, select)
   })
-  //on ajoute la categories Tous, au debut de notre tableau (unshift = permet d'ajouter un element au debut d'un tableau)
+  //on ajoute la categories TOUS, au debut de notre tableau (unshift = permet d'ajouter un element au debut d'un tableau)
   arr.unshift({ id: 0, name: "Tous" })
-  console.log(arr)
+
   // on appel notre fonction pour afficher les categories en lui passant notre tableau, qui contient les categories
   displayCategories(arr)
   // return response.datas
@@ -134,6 +134,8 @@ const displayCategories = (categories) => {
     filtersContainer.appendChild(createFilter(categorie.name))
   })
 }
+
+// *****************************BOUTON FILTRES******************************
 
 // Créer un bouton filtre
 const createFilter = (categorie) => {
@@ -160,11 +162,9 @@ const filterDatas = (works) => {
 getCategories()
 getWorks("Tous")
 
-// fentere modal
+//***************************FENETRE MODAL**********************************
 
-// faire une fonction pour afficher la modale
-// faire un addEventListener sur le btn modifier
-// et lancer la fonction au clik
+
 
 // Sélectionner le bouton "Modifier"
 var modifierBtn = document.getElementById("modifier")
@@ -209,10 +209,6 @@ window.onclick = function (event) {
     modal2.style.display = "none"
   }
 }
-
-// var modal3 = document.getElementById("myModal3")
-// var btn3 = document.getElementById("openModal3")
-// var span3 = document.getElementsByClassName("close")[2]
 
 btn3.onclick = function () {
   modal3.style.display = "block"
@@ -266,13 +262,3 @@ function displayImage() {
     reader.readAsDataURL(input.files[0])
   }
 }
-
-
-
-
-
-
-
-
-
-

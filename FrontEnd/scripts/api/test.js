@@ -1,6 +1,5 @@
 let selectedCateg = "tous"
 
-
 // dans un 1er temps nous avons fetch
 
 // Faire une fonction de tri
@@ -17,8 +16,7 @@ const modalGalleryContainer = document.querySelector(".modal-gallery-container")
 
 const switchLog = document.querySelector(".switch-log")
 
-
-token ? switchLog.innerHTML = "logout" : switchLog.innerHTML = "login"
+token ? (switchLog.innerHTML = "logout") : (switchLog.innerHTML = "login")
 
 // cree une fonction pour sup le token dans le localStorage
 
@@ -83,8 +81,8 @@ function createFigure(work) {
 
 function createMiniature(work) {
   const icon = document.createElement("i")
-  icon.classList.add("fa-regular")
-  icon.classList.add("trash-can")
+  icon.classList.add("fa-solid")
+  icon.classList.add("fa-trash-can")
   icon.classList.add("edit-icon")
 
   console.log(icon)
@@ -171,8 +169,6 @@ getCategories()
 getWorks("Tous")
 
 //***************************FENETRE MODAL**********************************
-
-
 
 // Sélectionner le bouton "Modifier"
 var modifierBtn = document.getElementById("modifier")

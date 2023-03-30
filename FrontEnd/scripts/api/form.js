@@ -36,37 +36,57 @@ form.addEventListener("submit", (e) => {
   console.log("Envoyé")
   const url = "http://localhost:5678/api/works"
   const fileInputElement = document.getElementById("file")
+
+  console.log(
+    fileInputElement.files[0],
+    document.querySelector(".title-input-modal").value,
+    document.querySelector(".selectCategory").value
+  )
+
   const formData = new FormData()
   formData.append("image", fileInputElement.files[0])
   formData.append("title", document.querySelector(".title-input-modal").value)
   formData.append("category", document.querySelector(".selectCategory").value)
 
-  
+  // console.log("important ", fileInputElement.files[0])
+  // console.log("important2 ", document.querySelector(".selectCategory").value)
+
   console.log(formData)
-  
-  postData(url, formData).then((data) => {
-    console.log(data) // JSON data parsed by `data.json()` call
+  const token = JSON.parse(localStorage.getItem("token"))
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "multipart/form-data",
+      "Authorization": `Bearer ${token}`,
+    },
+    body: JSON.stringify(formData), // body data type must match "Content-Type" header
   })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+    })
+
+  // postData(url, formData).then((data) => {
+  //   console.log(data) // JSON data parsed by `data.json()` call
+  // })
 
   //FormData  a ec les valuer des champts
 
   //FETCH methode post URL voir mission + Token dans headers autorizahion + Les donnée form data
 })
 
-
-
-
-
-// Example POST method implementation:
-async function postData(url, data) {
-  // Default options are marked with *
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${localStorage.getItem('token')}`,
-    },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-  })
-  return response.json(); // parses JSON response into native JavaScript objects
-}
+// // Example POST method implementation:
+// async function postData(url, data) {
+//   const token = JSON.parse(localStorage.getItem("token"))
+//   // Default options are marked with *
+//   const response = await fetch(url, {
+//     method: "POST",
+//     headers: {
+//       // "Content-Type": "multipart/form-data",
+//       "Authorization": `Bearer ${token}`,
+//     },
+//     body: JSON.stringify(data), // body data type must match "Content-Type" header
+//   })
+//   return response.json() // parses JSON response into native JavaScript objects
+// }

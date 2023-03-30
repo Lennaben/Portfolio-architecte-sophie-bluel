@@ -1,6 +1,5 @@
 let selectedCateg = "tous"
 
-// 21/02 je vais installé les categories
 
 // dans un 1er temps nous avons fetch
 
@@ -13,6 +12,15 @@ const urlWorks = "http://localhost:5678/api/works"
 const worksContainer = document.getElementsByClassName("gallery")[0]
 
 const modalGalleryContainer = document.querySelector(".modal-gallery-container")
+
+// *************************************************************
+
+const switchLog = document.querySelector(".switch-log")
+
+
+token ? switchLog.innerHTML = "logout" : switchLog.innerHTML = "login"
+
+// cree une fonction pour sup le token dans le localStorage
 
 function getWorks(selectedCateg) {
   fetch(urlWorks)

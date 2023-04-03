@@ -42,7 +42,6 @@ form.addEventListener("submit", (e) => {
     document.querySelector(".title-input-modal").value,
     document.querySelector(".selectCategory").value
   )
-
   const formData = new FormData()
   formData.append("image", fileInputElement.files[0])
   formData.append("title", document.querySelector(".title-input-modal").value)
@@ -57,15 +56,19 @@ form.addEventListener("submit", (e) => {
   fetch(url, {
     method: "POST",
     headers: {
-      "Content-Type": "multipart/form-data",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(formData), // body data type must match "Content-Type" header
+    body: formData, // passer directement l'objet FormData
   })
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
     })
+    .catch((error) => {
+      console.error(error)
+    })
+
+ 
 
   // postData(url, formData).then((data) => {
   //   console.log(data) // JSON data parsed by `data.json()` call

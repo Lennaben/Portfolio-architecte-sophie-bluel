@@ -230,7 +230,7 @@ window.onclick = function (event) {
 
 function getOptions(item, select) {
   const option = document.createElement("option")
-  option.value = item.name
+  option.value = item.id
   option.innerText = item.name
   option.classList.add("optionCategory")
   console.log(item.name)

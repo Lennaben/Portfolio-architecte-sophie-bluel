@@ -44,11 +44,17 @@ form.addEventListener("submit", (e) => {
   )
   const formData = new FormData()
   formData.append("image", fileInputElement.files[0])
+  // formData.append("title", document.querySelector(".title-input-modal").value)
   formData.append("title", document.querySelector(".title-input-modal").value)
+  // formData.append("category", document.querySelector(".selectCategory").value)
   formData.append("category", document.querySelector(".selectCategory").value)
 
   // console.log("important ", fileInputElement.files[0])
-  // console.log("important2 ", document.querySelector(".selectCategory").value)
+  // console.log(
+  //   "important2 ",
+  //   document.querySelector(".selectCategory").value,
+  //   document.querySelector(".title-input-modal").value
+  // )
 
   console.log(formData)
   const token = JSON.parse(localStorage.getItem("token"))
@@ -67,8 +73,6 @@ form.addEventListener("submit", (e) => {
     .catch((error) => {
       console.error(error)
     })
-
- 
 
   // postData(url, formData).then((data) => {
   //   console.log(data) // JSON data parsed by `data.json()` call

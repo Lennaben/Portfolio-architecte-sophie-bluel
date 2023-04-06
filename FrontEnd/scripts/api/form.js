@@ -37,26 +37,17 @@ form.addEventListener("submit", (e) => {
   const url = "http://localhost:5678/api/works"
   const fileInputElement = document.getElementById("file")
 
-  console.log(
-    fileInputElement.files[0],
-    document.querySelector(".title-input-modal").value,
-    document.querySelector(".selectCategory").value
-  )
-  const formData = new FormData()
-  formData.append("image", fileInputElement.files[0])
-  // formData.append("title", document.querySelector(".title-input-modal").value)
-  formData.append("title", document.querySelector(".title-input-modal").value)
-  // formData.append("category", document.querySelector(".selectCategory").value)
-  formData.append("category", document.querySelector(".selectCategory").value)
-
-  // console.log("important ", fileInputElement.files[0])
   // console.log(
-  //   "important2 ",
-  //   document.querySelector(".selectCategory").value,
-  //   document.querySelector(".title-input-modal").value
+  //   fileInputElement.files[0],
+  //   document.querySelector(".title-input-modal").value,
+  //   document.querySelector(".selectCategory").value
   // )
 
-  console.log(formData)
+  const formData = new FormData()
+  formData.append("image", fileInputElement.files[0])
+  formData.append("title", document.querySelector(".title-input-modal").value)
+  formData.append("category", document.querySelector(".selectCategory").value)
+
   const token = JSON.parse(localStorage.getItem("token"))
 
   fetch(url, {
@@ -69,18 +60,11 @@ form.addEventListener("submit", (e) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
+      getWorks("Tous")
     })
     .catch((error) => {
       console.error(error)
     })
-
-  // postData(url, formData).then((data) => {
-  //   console.log(data) // JSON data parsed by `data.json()` call
-  // })
-
-  //FormData  a ec les valuer des champts
-
-  //FETCH methode post URL voir mission + Token dans headers autorizahion + Les donnée form data
 })
 
 // // Example POST method implementation:

@@ -42,6 +42,7 @@ function getWorks(selectedCateg) {
             createFigure(work)
           })
         }
+        modalGalleryContainer.innerHTML = ""
         works.map((work) => createMiniature(work))
       }
       console.log("liste des works", works)

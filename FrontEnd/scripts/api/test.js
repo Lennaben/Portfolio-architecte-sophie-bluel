@@ -60,6 +60,7 @@ function createFigure(work) {
   // console.log(work)
   const figure = document.createElement("figure")
   const image = new Image()
+  figure.id = work.id
   image.src = work.imageUrl
   image.alt = work.title
   const figcaption = document.createElement("figcaption")
@@ -86,9 +87,8 @@ function createMiniature(work) {
   icon.classList.add("fa-trash-can")
   icon.classList.add("edit-icon")
 
-  console.log(icon)
-
   const figure = document.createElement("figure")
+  figure.id = work.id
   figure.classList.add("miniFigure")
 
   const image = new Image()
@@ -215,19 +215,19 @@ window.onclick = function (event) {
   }
 }
 
-btn3.onclick = function () {
-  modal3.style.display = "block"
-}
+// btn3.onclick = function () {
+//   modal3.style.display = "block"
+// }
 
-span3.onclick = function () {
-  modal3.style.display = "none"
-}
+// span3.onclick = function () {
+//   modal3.style.display = "none"
+// }
 
-window.onclick = function (event) {
-  if (event.target == modal3) {
-    modal3.style.display = "none"
-  }
-}
+// window.onclick = function (event) {
+//   if (event.target == modal3) {
+//     modal3.style.display = "none"
+//   }
+// }
 
 function getOptions(item, select) {
   const option = document.createElement("option")
@@ -270,3 +270,5 @@ function displayImage() {
 
 
 
+const mini = document.querySelectorAll('.miniFigure')
+console.log(mini);

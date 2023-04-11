@@ -267,3 +267,6 @@ function displayImage() {
     reader.readAsDataURL(input.files[0])
   }
 }
+
+
+

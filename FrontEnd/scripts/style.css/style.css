@@ -747,9 +747,3 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
-.error-post{
-  color: red ;
-  padding: 10px 0;
-}

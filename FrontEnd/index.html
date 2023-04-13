@@ -145,7 +145,8 @@
                 name="file"
                 id="file"
                 accept="image/*"
-                onchange=previewImage()/>
+                onchange="previewImage();"
+              />
               <button id="btnFileImage">+ Ajouter photo</button>
 
               <span class="imgDescription">jpg. png : 4mo max</span>
@@ -160,8 +161,6 @@
           <select id="list_deroulante" class="selectCategory" name="choix">
             <option value="" class="optionCategory"></option>
           </select>
-      
-          <p class="error-post"></p>
           <hr />
           <button class="btn_valide">Valider</button>
         </form>

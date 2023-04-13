@@ -21,15 +21,3 @@ if (token) {
   filtersElt.style.display = "flex"
   modifyLinkContainerElt.style.display = "none"
 }
-
-// essai 1
-
-// _______________________________________
-// // essai 2
-// let url = window.login.html;
-
-// if (url.includes ("secret")){
-//     const elementAmasquer = document.getElementById("filters-container");
-
-//     elementAmasquer.classList.toggle("hidden");
-// }

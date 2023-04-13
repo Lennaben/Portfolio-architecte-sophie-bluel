@@ -1,4 +1,3 @@
-// const { options } = require("../../../Backend/app")
 
 const btnFileImage = document.getElementById("btnFileImage")
 const form = document.getElementById("form")
@@ -14,7 +13,6 @@ console.log(btnFileImage, form, inputFile)
 btnFileImage.addEventListener("click", (e) => {
   e.preventDefault()
   console.log("Je clique sur le btn")
-
   inputFile.click()
 })
 
@@ -53,12 +51,6 @@ form.addEventListener("submit", (e) => {
 
     var modal = document.getElementById("modal")
     modal.style.display = "none"
-
-    // console.log(
-    //   fileInputElement.files[0],
-    //   document.querySelector(".title-input-modal").value,
-    //   document.querySelector(".selectCategory").value
-    // )
 
     const formData = new FormData()
     formData.append("image", file)

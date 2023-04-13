@@ -225,6 +225,16 @@ closeBtn.onclick = function () {
   modal.style.display = "none" // Masquer la fenêtre modale
 }
 
+
+// ça fait  un réctangle blanc quand on fait echape 
+// window.onkeydown = function (e) {
+//   const key = e.key // const {key} = event; in ES6+
+//   if (key === "Escape") {
+//     modal.style.display = "none" 
+//   }
+// }
+
+
 // Ajouter un événement pour fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
 window.onclick = function (event) {
   if (event.target == modal) {
@@ -249,20 +259,6 @@ window.onclick = function (event) {
     modal2.style.display = "none"
   }
 }
-
-// btn3.onclick = function () {
-//   modal3.style.display = "block"
-// }
-
-// span3.onclick = function () {
-//   modal3.style.display = "none"
-// }
-
-// window.onclick = function (event) {
-//   if (event.target == modal3) {
-//     modal3.style.display = "none"
-//   }
-// }
 
 function getOptions(item, select) {
   const option = document.createElement("option")

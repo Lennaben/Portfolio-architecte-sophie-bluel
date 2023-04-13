@@ -37,6 +37,13 @@ form.addEventListener("submit", (e) => {
   const url = "http://localhost:5678/api/works"
   const fileInputElement = document.getElementById("file")
 
+  var modal2 = document.getElementById("uploadModale")
+  modal2.style.display = "none"
+
+
+  var modal = document.getElementById("modal")
+   modal.style.display = "none" 
+
   // console.log(
   //   fileInputElement.files[0],
   //   document.querySelector(".title-input-modal").value,
@@ -66,7 +73,6 @@ form.addEventListener("submit", (e) => {
       console.error(error)
     })
 })
-
 
 const mini = document.querySelectorAll(".miniFigure")
 console.log(mini)

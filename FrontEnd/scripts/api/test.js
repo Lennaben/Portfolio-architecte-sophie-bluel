@@ -90,11 +90,14 @@ function createMiniature(work) {
   icon.classList.add("edit-icon")
   icon.addEventListener("click", function () {
     console.log(typeof work.id)
-    // on fait une requete fetch avec la methode delete vers l'url avec le bon id mais ça retourne 401 surement car le token n'est pas bon 
+    // y faut faire un JSON.PARSE du locale storage
+    const token = JSON.parse(localStorage.getItem("token"))
+    // on fait une requete fetch avec la methode delete vers l'url avec le bon id mais ça retourne 401 surement car le token n'est pas bon
+    //
     fetch(`http://localhost:5678/api/works/${work.id}`, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => {

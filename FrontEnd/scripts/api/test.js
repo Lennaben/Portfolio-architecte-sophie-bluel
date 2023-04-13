@@ -17,6 +17,13 @@ const modalGalleryContainer = document.querySelector(".modal-gallery-container")
 const switchLog = document.querySelector(".switch-log")
 
 token ? (switchLog.innerHTML = "logout") : (switchLog.innerHTML = "login")
+if (switchLog.innerHTML == "logout") {
+  switchLog.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    window.location.href = "./index.html"
+  })
+}
 
 // cree une fonction pour sup le token dans le localStorage
 

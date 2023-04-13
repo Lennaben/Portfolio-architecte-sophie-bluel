@@ -67,6 +67,9 @@ form.addEventListener("submit", (e) => {
     })
 })
 
+
+const mini = document.querySelectorAll(".miniFigure")
+console.log(mini)
 // // Example POST method implementation:
 // async function postData(url, data) {
 //   const token = JSON.parse(localStorage.getItem("token"))

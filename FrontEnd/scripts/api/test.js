@@ -81,11 +81,36 @@ function createFigure(work) {
 //    <p class="figEdit">éditer</p>
 //  </div>
 
+console.log("mon token : ", token)
+
 function createMiniature(work) {
   const icon = document.createElement("i")
   icon.classList.add("fa-solid")
   icon.classList.add("fa-trash-can")
   icon.classList.add("edit-icon")
+  icon.addEventListener("click", function () {
+    console.log(typeof work.id)
+    // on fait une requete fetch avec la methode delete vers l'url avec le bon id mais ça retourne 401 surement car le token n'est pas bon 
+    fetch(`http://localhost:5678/api/works/${work.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          const figure = document.getElementById(work.id)
+          if (figure) {
+            figure.remove()
+          }
+        } else {
+          throw new Error("Failed to delete image from API")
+        }
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  })
 
   const figure = document.createElement("figure")
   figure.id = work.id
@@ -267,8 +292,3 @@ function displayImage() {
     reader.readAsDataURL(input.files[0])
   }
 }
-
-
-
-const mini = document.querySelectorAll('.miniFigure')
-console.log(mini);

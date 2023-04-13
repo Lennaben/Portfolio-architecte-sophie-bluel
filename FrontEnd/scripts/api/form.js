@@ -34,55 +34,44 @@ preview.addEventListener("load", function () {
 form.addEventListener("submit", (e) => {
   e.preventDefault()
   console.log("Envoyé")
+  const url = "http://localhost:5678/api/works"
+  const fileInputElement = document.getElementById("file")
 
-  // message d'eerreur
-  const file = document.getElementById("file").files[0]
-  const title = document.querySelector(".title-input-modal").value
-  const category = document.querySelector(".selectCategory").value
-  console.log(file, title, category)
-  if (!file || !title || !category) {
-    console.log("erreur")
-    const errorContainer = document.querySelector(".error-post")
-    errorContainer.innerHTML = "Veuillez remplir correctement le formulaire"
-    //Affier une erreur dans le HTML
-  } else {
-    const url = "http://localhost:5678/api/works"
+  var modal2 = document.getElementById("uploadModale")
+  modal2.style.display = "none"
 
-    var modal2 = document.getElementById("uploadModale")
-    modal2.style.display = "none"
 
-    var modal = document.getElementById("modal")
-    modal.style.display = "none"
+  var modal = document.getElementById("modal")
+   modal.style.display = "none" 
 
-    // console.log(
-    //   fileInputElement.files[0],
-    //   document.querySelector(".title-input-modal").value,
-    //   document.querySelector(".selectCategory").value
-    // )
+  // console.log(
+  //   fileInputElement.files[0],
+  //   document.querySelector(".title-input-modal").value,
+  //   document.querySelector(".selectCategory").value
+  // )
 
-    const formData = new FormData()
-    formData.append("image", file)
-    formData.append("title", title)
-    formData.append("category", category)
+  const formData = new FormData()
+  formData.append("image", fileInputElement.files[0])
+  formData.append("title", document.querySelector(".title-input-modal").value)
+  formData.append("category", document.querySelector(".selectCategory").value)
 
-    const token = JSON.parse(localStorage.getItem("token"))
+  const token = JSON.parse(localStorage.getItem("token"))
 
-    fetch(url, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formData, // passer directement l'objet FormData
+  fetch(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData, // passer directement l'objet FormData
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      getWorks("Tous")
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        getWorks("Tous")
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }
+    .catch((error) => {
+      console.error(error)
+    })
 })
 
 const mini = document.querySelectorAll(".miniFigure")

@@ -338,18 +338,6 @@ h3 {
   background-color: white;
 }
 
-/* edit {
-  background-color: #f11010;
-  color: #f11010;
-  width: 50%;
-} */
-
-/* a voir jeudi 
- -Espace sur les coter de la barre admin 
- -logo edit 
- -police du btn  */
-
-/* fenetre modale  */
 
 .modal {
   display: none; /* Masquer la fenêtre modale par défaut */
@@ -519,7 +507,7 @@ h5 {
   cursor: pointer;
 }
 
-/* fenetre modam ajout photo  */
+
 
 .modal {
   display: none;

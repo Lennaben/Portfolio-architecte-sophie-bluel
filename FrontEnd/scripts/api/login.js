@@ -1,14 +1,13 @@
+// RECUPERATION DE L'API
 const urlLogin = "http://localhost:5678/api/users/login"
-
-// const sendBtn = document.querySelector("#btn-login")
-
+//SELECTION DU BOUTON POUR SE CONNECTER AU CLICK EVETEMENT => ON SE CONNECTE
 const btnLog = document.querySelector("#btn-login")
 btnLog.addEventListener("click", (e) => {
   e.preventDefault()
   console.log("hello")
   getLogin()
 })
-
+// FONCTION QUI PERMET DE 
 async function getLogin() {
   const email = document.getElementById("email").value
   const password = document.getElementById("password").value
@@ -18,25 +17,8 @@ async function getLogin() {
     password: password,
   }
 
-  // console.log(isValidEmail(email))
-
-  // if (!isValidEmail(email)) {
-  //   emailErrorMessage.innerHTML = "Veuillez entrer une adresse email valide."
-  //   // on l'affiche
-  //   emailErrorMessage.style.display = "block"
-  // } else {
-  //   emailErrorMessage.innerHTML = ""
-  //   emailErrorMessage.style.display = "none"
-  // }
-
-  // if (!isPasswordValid(password)) {
-  //   passwordErrorMessage.innerHTML = "Veuillez entrer un password valide."
-  //   passwordErrorMessage.style.display = "block"
-  // } else {
-  //   passwordErrorMessage.innerHTML = ""
-  //   passwordErrorMessage.style.display = "none"
   if (isValidEmail(email) && isPasswordValid(password)) {
-    //    poste moi mon user , emballe le en json et envoie le à l'adresse urlLogin, la reponse c'est l'accusé de reception
+    // ON POSTE LE USER LE JSON L'ENVOI A L'ADRESSE URLLOGIN, LA REPONSE = L'ACCUSE DE RECEPTION 
     let response = await fetch(urlLogin, {
       method: "POST",
       headers: {
@@ -44,30 +26,21 @@ async function getLogin() {
       },
       body: JSON.stringify(user),
     })
+    // SI REPONSE OK ON SE CONNECTE 
     if (response.ok) {
       console.log("envoyé")
       const data = await response.json()
       console.log(data)
-      // envoyer le token dans le local storage
+      // ENVOI DU TOKEN DANS LE LOCAL STORAGE     
       localStorage.setItem("token", JSON.stringify(data.token))
       window.location.href = "index.html"
+      // SINON MESSAGE D'ERREUR ET ON SE CONNECTE PAS 
     } else {
       console.log("pas envoyé")
       alert("Utilisateur non trouvé")
     }
   }
 }
-
-// mettre un message d'erreur si les champs ne sont pas correcte
-
-// if (!isValidEmail(email)) {
-//   emailErrorMessage.innerHTML = "Veuillez entrer une adresse email valide."
-//   emailErrorMessage.style.display = "block"
-// } else {
-//   // Validation réussie
-//   emailErrorMessage.innerHTML = " "
-//   emailErrorMessage.style.display = "none"
-// }
 
 function isValidEmail(email) {
   const emailErrorMessage = document.getElementById("email-error-message")

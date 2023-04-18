@@ -10,7 +10,7 @@ const modalGalleryContainer = document.querySelector(".modal-gallery-container")
 // *************************************************************
 
 // BTN LOGIN QUI CHANGE EN LOGOUT EN FONCTION DU TOKEN
-// + ONCLICK SUR LOGOUT SUP DU LOCSTORAGE + REDIRECTION SUR LA PAGE NON CONNECTER
+// QUAND ON ON CLICK SUR LOGOUT CELA SUPPRIME LE TOKEN DU LOCSTORAGE + REDIRECTION SUR LA PAGE NON CONNECTER
 
 const switchLog = document.querySelector(".switch-log")
 
@@ -87,7 +87,8 @@ function createMiniature(work) {
     console.log(typeof work.id)
     const token = JSON.parse(localStorage.getItem("token"))
 
-    //methode fetch permtant de supprimer un work au click sur la poubelle
+
+    // METHODE FETCH PERMETANT DE SUPPRIMER UN WORK AU CLICK SUR ME MINI POUBELLE 
     fetch(`http://localhost:5678/api/works/${work.id}`, {
       method: "DELETE",
       headers: {
@@ -109,7 +110,7 @@ function createMiniature(work) {
       })
   })
 
-  // CREE LA MINIFIGURE
+  // CREATION LA MINIFIGURE
 
   const figure = document.createElement("figure")
   figure.id = work.id
@@ -128,11 +129,10 @@ function createMiniature(work) {
   figure.appendChild(figcaption)
   modalGalleryContainer.appendChild(figure)
 }
-
-// *********************************** CATEGORIES **********************************************
-//cela nous permet de recuperer les categories avec fetch en passant par l'API categories
-// fonction asynchrone = ça permet de continuer l'execution de la page pendant le chargement de la fonction (async)
-// await = on attend la validation de tous les AWAIT avant de valider la promesse et retourner  le resulta de la fonction
+// -----------------------------------------CATEGORIES-----------------------------------
+//cela nous permet de récupérer les catégories avec fetch en passant par l'API catégories
+// fonction asynchrone = ça permet de continuer l'exécution de la page pendant le chargement de la fonction (async)
+// await = on attend la validation de tous les AWAIT avant de valider la promesse et retourner  le résultat de la fonction
 
 const urlCategories = "http://localhost:5678/api/categories"
 
@@ -148,18 +148,18 @@ const getCategories = async () => {
   arr.map((item) => {
     getOptions(item, select)
   })
-  //on ajoute la categories TOUS, au debut de notre tableau (unshift = permet d'ajouter un element au debut d'un tableau)
+
+  // ON AJOUT LA CATEGORIES "TOUS", AU DEBUT DE NOTRE TABLEAU 5 UNSHFIT + PERMET D'AJOUTER UN ELEMENT AU DEBUT D'UN TABLEAU
   arr.unshift({ id: 0, name: "Tous" })
 
-  // on appel notre fonction pour afficher les categories en lui passant notre tableau, qui contient les categories
+  // ON APPEL NOTRE FONCTION POUR AFFICHER LES CATEGORIES EN LUI DONNANT NOTRE TABLEAU, QUI CONTIENT LES CATEGORES
   displayCategories(arr)
 }
-
-// afficher les categories
+// AFFICHAGE DES CATEGORIES
 const filtersContainer = document.querySelector(".filters-container ")
 
 const displayCategories = (categories) => {
-  // pour chacune des categories, on attache a notre container le resultat de la fonction createFilter
+  // POUR CHACUNE DE CATEGORES, ON ATTACHE A NOTRE CONTAINER LE RESULTAT DE LA FONCTION CREATFILTER
   categories.map((categorie) => {
     filtersContainer.appendChild(createFilter(categorie.name))
   })
@@ -167,7 +167,7 @@ const displayCategories = (categories) => {
 
 // *****************************BOUTON FILTRES******************************
 
-// Créer un bouton filtre
+// CREATION DES BOUTONS FILTRE
 const createFilter = (categorie) => {
   const filter = document.createElement("button")
   filter.classList.add("filter")
@@ -182,15 +182,16 @@ const createFilter = (categorie) => {
   return filter
 }
 
-// Filtrer des datas par catégories
+// ON FILTRE LES DATA PAR CATEGORIES
 const filterDatas = (works) => {
   const filtered = works.filter((work) => work.category.name === selectedCateg)
   return filtered
 }
 
-// appel de notre fonction pour obtenir les filtres
+
+// ON APPEL NOTRE FONCTION POUR OBTNEIR MES FILTRES
 getCategories()
-// POUR AFFICHER TOUS LES TWORKS PAR DEFAUTS
+// POUR AFFICHER TOUS LES WORKS PAR DEFAUTS
 getWorks("Tous")
 
 //***************************FENETRE MODAL**********************************
@@ -220,9 +221,8 @@ window.onclick = function (event) {
     modal.style.display = "none" // Masquer la fenêtre modale
   }
 }
-
-// 2EME FENETRE MODAL------------------------------------
-// AFFICHER ET PLUS AFFICHER LA FENETRE
+//------------------------------------------- 2EME FENETRE MODAL--------------------------
+// AFFCIHER OUI OU NON LA FENETRE MODAL
 var modal2 = document.getElementById("uploadModale")
 var btn2 = document.querySelector(".btn-modal")
 var span2 = document.getElementsByClassName("close")[1]
@@ -249,7 +249,7 @@ function getOptions(item, select) {
   console.log(item.name)
   select.appendChild(option)
 }
-// AFFICHER L4IMAGE PREVOIR L4IMAGE
+// AFFICHER LE PREVIEW DE L'IMAGE
 function previewImage() {
   var file = document.getElementById("file").files
   if (file.length > 0) {

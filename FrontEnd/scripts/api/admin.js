@@ -1,4 +1,4 @@
-// GESTION DE L4AFFICHAGE DE LA BARRE NOIR
+// GESTION DE L'AFFICHAGE DE LA BARRE NOIR
 let filtersElt = document.querySelector(".filters-container")
 let adminBarreElt = document.querySelector(".adminBarre")
 let modifyLinkContainerElt = document.querySelector(".modifyLinkContainer")

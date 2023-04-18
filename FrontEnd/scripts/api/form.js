@@ -1,4 +1,4 @@
-// RECUPERATION DES ELEMENTS DU FORMULAIRE,
+// RECUPERATION DES ELEMENTS DU FORMULAIRE POUR ENVOYER UNE IMAGE 
 const btnFileImage = document.getElementById("btnFileImage")
 const form = document.getElementById("form")
 const inputFile = document.getElementById("file")
@@ -21,22 +21,21 @@ preview.addEventListener("load", function () {
   imgDescription.style.display = "none"
   blockUpload.style.display = "none"
   iconImg.style.display = "none"
-  // imgDescription.style.display = "none"
   console.log(preview)
 })
 
-//Récupère les valuer des champs (title, image, catégorie) LES VALEURS ET ENVOI DU FORMULAIRE VERS LE BACKEND
-
+// RECUPERATION DES VALEURS DES INPUTS TITLE,IMAGE,CATEGORIES ET ENVOI DU FORMULAIRE VERS LE BACKEND 
 form.addEventListener("submit", (e) => {
   e.preventDefault()
   console.log("Envoyé")
 
-  // message d'erreur
+// MESSAGE D'ERREUR DE LA MODAL
   const file = document.getElementById("file").files[0]
   const title = document.querySelector(".title-input-modal").value
   const category = document.querySelector(".selectCategory").value
   console.log(file, title, category)
-  // SI IL Y A UNE ERREUR ON AFFICHE L'ERREUR
+
+  // SI IL Y A UNE ERREUR ON AFFICHE LE MESSAGE D'ERREUR
   if (!file || !title || !category) {
     console.log("erreur")
     const errorContainer = document.querySelector(".error-post")
@@ -50,14 +49,16 @@ form.addEventListener("submit", (e) => {
 
     var modal = document.getElementById("modal")
     modal.style.display = "none"
-    //  ON CREE UN OBJ FORM DATA QUI VAS CONTENIR LES INFOS DONT LE BACKEND A BESOIN
+
+
+    //  ON CREE UN OBBJECT FORM DATA QUI VAS CONTENIR LES INFOS DONT LE BACKEND A BESOIN POUR POSTER LE WORK
     const formData = new FormData()
     formData.append("image", file)
     formData.append("title", title)
     formData.append("category", category)
     // ON RECUPER LE TOKEN
     const token = JSON.parse(localStorage.getItem("token"))
-    // ON POST A L'URL LE FORM DATA AVEC NOTRE TOKEN POUR L'AUTORISATION
+    // ON POST L'URL LE FORM DATA AVEC NOTRE TOKEN POUR L'AUTORISATION
     fetch(url, {
       method: "POST",
       headers: {
@@ -76,5 +77,5 @@ form.addEventListener("submit", (e) => {
   }
 })
 
-const mini = document.querySelectorAll(".miniFigure")
-console.log(mini)
+// const mini = document.querySelectorAll(".miniFigure")
+// console.log(mini)

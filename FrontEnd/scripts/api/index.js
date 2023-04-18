@@ -1,11 +1,6 @@
 let selectedCateg = "tous"
 
-// dans un 1er temps nous avons fetch
-
-// Faire une fonction de tri
-// actualiser les resuitats en fonction du filtre
-
-//************************************ */ Works*************************************************
+//************************************ INSTALLLATION DES WOKS *************************************************
 
 const urlWorks = "http://localhost:5678/api/works"
 const worksContainer = document.getElementsByClassName("gallery")[0]
@@ -13,6 +8,9 @@ const worksContainer = document.getElementsByClassName("gallery")[0]
 const modalGalleryContainer = document.querySelector(".modal-gallery-container")
 
 // *************************************************************
+
+// BTN LOGIN QUI CHANGE EN LOGOUT EN FONCTION DU TOKEN
+// + ONCLICK SUR LOGOUT SUP DU LOCSTORAGE + REDIRECTION SUR LA PAGE NON CONNECTER
 
 const switchLog = document.querySelector(".switch-log")
 
@@ -25,7 +23,7 @@ if (switchLog.innerHTML == "logout") {
   })
 }
 
-// cree une fonction pour sup le token dans le localStorage
+// RECUPERATION DES WORKS + CREATION DES FIGURES GRACE A LA FONCTION CREATFIGURE QUE L'ON REMPLIE GRACE AU MAP SUR LES WORKS QUI ON ETE FETCH
 
 function getWorks(selectedCateg) {
   fetch(urlWorks)
@@ -61,10 +59,9 @@ function getWorks(selectedCateg) {
 
 // ******************************MINI FIGURE**********************************
 
-// Créer une balise figure contenant une image et une description(figcaption)
+// CREATION D'UNE BALISE FIGURE CONTENANT UNE IMAGE ET LA DESCRIPTION (FIGCAPTION)
 
 function createFigure(work) {
-  // console.log(work)
   const figure = document.createElement("figure")
   const image = new Image()
   figure.id = work.id
@@ -77,18 +74,9 @@ function createFigure(work) {
   worksContainer.appendChild(figure)
 }
 
-//  <div class="miniFigure">
-//    <div>
-//      <i class="fa-regular fa-pen-to-square edit-icon"></i>
-//      <img
-//        src="http://localhost:5678/images/appartement-paris-v1651287270508.png"
-//        class="miniImage"
-//      />
-//    </div>
-//    <p class="figEdit">éditer</p>
-//  </div>
-
 console.log("mon token : ", token)
+
+// -----------------------------CREATION DES MINIFIGURE-------------------------------------------
 
 function createMiniature(work) {
   const icon = document.createElement("i")
@@ -97,10 +85,9 @@ function createMiniature(work) {
   icon.classList.add("edit-icon")
   icon.addEventListener("click", function () {
     console.log(typeof work.id)
-    // y faut faire un JSON.PARSE du locale storage
     const token = JSON.parse(localStorage.getItem("token"))
-    // on fait une requete fetch avec la methode delete vers l'url avec le bon id mais ça retourne 401 surement car le token n'est pas bon
-    //
+
+    //methode fetch permtant de supprimer un work au click sur la poubelle
     fetch(`http://localhost:5678/api/works/${work.id}`, {
       method: "DELETE",
       headers: {
@@ -121,6 +108,8 @@ function createMiniature(work) {
         console.error(error)
       })
   })
+
+  // CREE LA MINIFIGURE
 
   const figure = document.createElement("figure")
   figure.id = work.id
@@ -147,13 +136,13 @@ function createMiniature(work) {
 
 const urlCategories = "http://localhost:5678/api/categories"
 
-// Obtenir la liste des catégories
+// OBETENIR LA LISTE DES CATEGORIES GRACE A L'API
 const getCategories = async () => {
   const data = await fetch(urlCategories)
   const response = await data.json()
   console.log(response)
 
-  //  on copie dans un tableau la reponse de l'API
+  // ON COPIE LA REPONSE DE L'API DANS LE TABLEAU
   const arr = [...response]
   const select = document.querySelector("#list_deroulante")
   arr.map((item) => {
@@ -164,7 +153,6 @@ const getCategories = async () => {
 
   // on appel notre fonction pour afficher les categories en lui passant notre tableau, qui contient les categories
   displayCategories(arr)
-  // return response.datas
 }
 
 // afficher les categories
@@ -202,6 +190,7 @@ const filterDatas = (works) => {
 
 // appel de notre fonction pour obtenir les filtres
 getCategories()
+// POUR AFFICHER TOUS LES TWORKS PAR DEFAUTS
 getWorks("Tous")
 
 //***************************FENETRE MODAL**********************************
@@ -225,16 +214,6 @@ closeBtn.onclick = function () {
   modal.style.display = "none" // Masquer la fenêtre modale
 }
 
-
-// ça fait  un réctangle blanc quand on fait echape 
-// window.onkeydown = function (e) {
-//   const key = e.key // const {key} = event; in ES6+
-//   if (key === "Escape") {
-//     modal.style.display = "none" 
-//   }
-// }
-
-
 // Ajouter un événement pour fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
 window.onclick = function (event) {
   if (event.target == modal) {
@@ -242,6 +221,8 @@ window.onclick = function (event) {
   }
 }
 
+// 2EME FENETRE MODAL------------------------------------
+// AFFICHER ET PLUS AFFICHER LA FENETRE
 var modal2 = document.getElementById("uploadModale")
 var btn2 = document.querySelector(".btn-modal")
 var span2 = document.getElementsByClassName("close")[1]
@@ -259,7 +240,7 @@ window.onclick = function (event) {
     modal2.style.display = "none"
   }
 }
-
+// PERMET D'OBETENIR TOUTE LES OPTIONS POUR LE MENUS SELECTE
 function getOptions(item, select) {
   const option = document.createElement("option")
   option.value = item.id
@@ -268,7 +249,7 @@ function getOptions(item, select) {
   console.log(item.name)
   select.appendChild(option)
 }
-
+// AFFICHER L4IMAGE PREVOIR L4IMAGE
 function previewImage() {
   var file = document.getElementById("file").files
   if (file.length > 0) {
@@ -283,7 +264,7 @@ function previewImage() {
     fileReader.readAsDataURL(file[0])
   }
 }
-
+// AFFICHER L'IMAGE DANS LA MODAL
 function displayImage() {
   var input = document.getElementById("image")
   var container = document.getElementById("imageContainer")
@@ -298,3 +279,4 @@ function displayImage() {
     reader.readAsDataURL(input.files[0])
   }
 }
+// _______________________________________________________________________________________________

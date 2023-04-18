@@ -1,11 +1,9 @@
+// GESTION DE L4AFFICHAGE DE LA BARRE NOIR
 let filtersElt = document.querySelector(".filters-container")
 let adminBarreElt = document.querySelector(".adminBarre")
 let modifyLinkContainerElt = document.querySelector(".modifyLinkContainer")
 console.log(modifyLinkContainerElt)
 console.log(filtersElt)
-
-//Vérifier si il y a le Token dans le localStorage
-// console.log(localStorage.getItem("token"))
 
 const token = localStorage.getItem("token")
 console.log(token)

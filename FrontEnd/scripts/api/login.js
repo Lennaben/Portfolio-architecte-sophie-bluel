@@ -7,7 +7,7 @@ btnLog.addEventListener("click", (e) => {
   console.log("hello")
   getLogin()
 })
-// FONCTION QUI PERMET DE 
+// FONCTION QUI PERMET DE SE CONNECTER EN ENVOYANT LES DONNEES SAISIE DANS LE FORMULAIRE DE CONNEXTION  AFIN D'OBTENIR UN TOKEN 
 async function getLogin() {
   const email = document.getElementById("email").value
   const password = document.getElementById("password").value

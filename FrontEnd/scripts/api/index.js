@@ -52,7 +52,7 @@ function getWorks(selectedCateg) {
       }
       console.log("liste des works", works)
     })
-    .catch(function (error) {
+    .catch(function () {
       console.log(error)
     })
 }
@@ -273,7 +273,7 @@ function displayImage() {
     var reader = new FileReader()
 
     reader.onload = function (e) {
-      container.innerHTML = '<img src="' + e.target.result + '">'
+      container.innerHTML = '<img src=' + e.target.result + '">'
     }
 
     reader.readAsDataURL(input.files[0])

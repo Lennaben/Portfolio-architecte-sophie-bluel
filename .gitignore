@@ -1,2 +1,4 @@
 .idea
 /node_modules
+FrontEnd/scripts/api/index.js
+*.js

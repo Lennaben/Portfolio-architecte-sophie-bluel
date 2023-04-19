@@ -110,7 +110,7 @@ function createMiniature(work) {
       })
   })
 
-  // CREATION LA MINIFIGURE
+  // CREATION DES MINIFIGURE 
 
   const figure = document.createElement("figure")
   figure.id = work.id

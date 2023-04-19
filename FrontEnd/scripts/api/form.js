@@ -51,7 +51,7 @@ form.addEventListener("submit", (e) => {
     modal.style.display = "none"
 
 
-    //  ON CREE UN OBBJECT FORM DATA QUI VAS CONTENIR LES INFOS DONT LE BACKEND A BESOIN POUR POSTER LE WORK
+    //  ON CREE UN OBJECT FORM DATA QUI VAS CONTENIR LES INFOS DONT LE BACKEND A BESOIN POUR POSTER LE WORK
     const formData = new FormData()
     formData.append("image", file)
     formData.append("title", title)
@@ -77,5 +77,3 @@ form.addEventListener("submit", (e) => {
   }
 })
 
-// const mini = document.querySelectorAll(".miniFigure")
-// console.log(mini)

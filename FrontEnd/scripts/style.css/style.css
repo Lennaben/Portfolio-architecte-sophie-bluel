@@ -684,8 +684,9 @@ hr {
 
 .uploadContainer #preview {
   width: 129px;
-  height: 176px;
+  height: 180px;
   display: none;
+  object-fit:cover ;
 }
 
 .blockUpload {

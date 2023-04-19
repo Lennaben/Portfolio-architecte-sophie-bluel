@@ -8,7 +8,8 @@ console.log(filtersElt)
 const token = localStorage.getItem("token")
 console.log(token)
 if (token) {
-  //Si oui, Affcher Barre d'amdmin noir et les bouton modifier, faire disparer les filtrer (display none)
+  // SI OUI, ( PRESENCE DU TOKEN) AFFICHER LA BARRE NOIR SINON LA FAIRE DISPARAITRE = NOUS SERONS DECONNECTER 
+
 
   modifyLinkContainerElt.style.display = "inline"
   adminBarreElt.style.display = "flex"

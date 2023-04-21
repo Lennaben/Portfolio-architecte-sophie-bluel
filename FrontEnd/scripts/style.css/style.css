@@ -363,6 +363,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
 }
 
 .close {

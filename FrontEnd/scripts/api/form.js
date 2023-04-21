@@ -1,4 +1,4 @@
-// RECUPERATION DES ELEMENTS DU FORMULAIRE POUR ENVOYER UNE IMAGE 
+// RECUPERATION DES ELEMENTS DU FORMULAIRE POUR ENVOYER UNE IMAGE
 const btnFileImage = document.getElementById("btnFileImage")
 const form = document.getElementById("form")
 const inputFile = document.getElementById("file")
@@ -24,12 +24,12 @@ preview.addEventListener("load", function () {
   console.log(preview)
 })
 
-// RECUPERATION DES VALEURS DES INPUTS TITLE,IMAGE,CATEGORIES ET ENVOI DU FORMULAIRE VERS LE BACKEND 
+// RECUPERATION DES VALEURS DES INPUTS TITLE,IMAGE,CATEGORIES ET ENVOI DU FORMULAIRE VERS LE BACKEND
 form.addEventListener("submit", (e) => {
   e.preventDefault()
   console.log("Envoyé")
 
-// MESSAGE D'ERREUR DE LA MODAL
+  // MESSAGE D'ERREUR DE LA MODAL
   const file = document.getElementById("file").files[0]
   const title = document.querySelector(".title-input-modal").value
   const category = document.querySelector(".selectCategory").value
@@ -50,7 +50,6 @@ form.addEventListener("submit", (e) => {
     var modal = document.getElementById("modal")
     modal.style.display = "none"
 
-
     //  ON CREE UN OBJECT FORM DATA QUI VAS CONTENIR LES INFOS DONT LE BACKEND A BESOIN POUR POSTER LE WORK
     const formData = new FormData()
     formData.append("image", file)
@@ -70,10 +69,20 @@ form.addEventListener("submit", (e) => {
       .then((data) => {
         console.log(data)
         getWorks("Tous")
+        // vide les champs title + categorie
+        document.querySelector(".title-input-modal").value = ""
+        document.querySelector(".selectCategory").value = ""
+        // preview.removeAttribute("src")
+
+
+        // je ne sais pas comment faire pour retirer l'ancien preview quand je valide 
+        btnFileImage.style.display = "block"
+        imgDescription.style.display = "block"
+        blockUpload.style.display = "block"
+        iconImg.style.display = "block"
       })
       .catch((error) => {
         console.error(error)
       })
   }
 })
-

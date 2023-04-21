@@ -23,6 +23,10 @@ if (switchLog.innerHTML == "logout") {
   })
 }
 
+if (!token) {
+  document.querySelector(".modify_group").style.display = "none"
+  document.querySelector(".modify_article").style.display = "none"
+}
 // RECUPERATION DES WORKS + CREATION DES FIGURES GRACE A LA FONCTION CREATFIGURE QUE L'ON REMPLIE GRACE AU MAP SUR LES WORKS QUI ON ETE FETCH
 
 function getWorks(selectedCateg) {
@@ -87,8 +91,7 @@ function createMiniature(work) {
     console.log(typeof work.id)
     const token = JSON.parse(localStorage.getItem("token"))
 
-
-    // METHODE FETCH PERMETANT DE SUPPRIMER UN WORK AU CLICK SUR ME MINI POUBELLE 
+    // METHODE FETCH PERMETANT DE SUPPRIMER UN WORK AU CLICK SUR ME MINI POUBELLE
     fetch(`http://localhost:5678/api/works/${work.id}`, {
       method: "DELETE",
       headers: {
@@ -110,7 +113,7 @@ function createMiniature(work) {
       })
   })
 
-  // CREATION DES MINIFIGURE 
+  // CREATION DES MINIFIGURE
 
   const figure = document.createElement("figure")
   figure.id = work.id
@@ -188,7 +191,6 @@ const filterDatas = (works) => {
   return filtered
 }
 
-
 // ON APPEL NOTRE FONCTION POUR OBTNEIR MES FILTRES
 getCategories()
 // POUR AFFICHER TOUS LES WORKS PAR DEFAUTS
@@ -228,7 +230,8 @@ var btn2 = document.querySelector(".btn-modal")
 var span2 = document.getElementsByClassName("close")[1]
 
 btn2.onclick = function () {
-  modal2.style.display = "block"
+  modal2.previousElementSibling.style.display = "none"
+  modal2.style.display = "flex"
 }
 
 span2.onclick = function () {
@@ -273,10 +276,11 @@ function displayImage() {
     var reader = new FileReader()
 
     reader.onload = function (e) {
-      container.innerHTML = '<img src=' + e.target.result + '">'
+      container.innerHTML = "<img src=" + e.target.result + '">'
     }
 
     reader.readAsDataURL(input.files[0])
   }
 }
+
 // _______________________________________________________________________________________________

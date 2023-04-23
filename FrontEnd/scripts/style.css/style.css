@@ -655,7 +655,7 @@ hr {
   color: #306685;
   font-family: "work sans";
   /* position: absolute; */
-  margin-top: 20px;
+  /* margin-top: 20px; */
   cursor: pointer;
 }
 
@@ -671,7 +671,7 @@ hr {
 .icon-img {
   background-color: transparent;
   color: #b9c5cc;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 #imageContainer {
@@ -696,9 +696,7 @@ hr {
   align-items: center;
   justify-content: center;
   width: 420px;
-  row-gap: 20px;
-  
-  
+  row-gap: 10px;
 }
 
 .admin {
@@ -732,10 +730,6 @@ hr {
 
 .icon-img {
   font-size: 58px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 

@@ -4,3 +4,7 @@
    "**/Backend"
   ]
 }
+
+// En fait live server refresh a chaque fois que le backend est modifié ce qui cause un refresh de page 
+// et c'est pourquoi ça fonctionnait sans refres en ouvrant l'index html via l'explorateur de fichiers
+// du coup on ignore le dossier backend pour le live server 

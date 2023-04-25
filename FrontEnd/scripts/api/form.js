@@ -72,13 +72,13 @@ form.addEventListener("submit", (e) => {
         // vide les champs title + categorie
         document.querySelector(".title-input-modal").value = ""
         document.querySelector(".selectCategory").value = ""
-        // preview.removeAttribute("src")
+        preview.removeAttribute("src")
+        preview.style.display = "none"
 
-
-        // je ne sais pas comment faire pour retirer l'ancien preview quand je valide 
+        // je ne sais pas comment faire pour retirer l'ancien preview quand je valide
         btnFileImage.style.display = "block"
         imgDescription.style.display = "block"
-        blockUpload.style.display = "block"
+        blockUpload.style.display = "flex"
         iconImg.style.display = "block"
       })
       .catch((error) => {
